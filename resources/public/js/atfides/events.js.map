@@ -1,0 +1,1 @@
+{"version":3,"file":"\/Users\/mo\/Desktop\/cram\/atfides\/resources\/public\/js\/atfides\/events.js","sources":["events.cljs"],"lineCount":10,"mappings":";AAAA;;;;AAIA,qCAAA,rCAACA,sIAEA,WAAMC,EAAEA;AAAR,AACEC","names":["re-frame.core\/reg-event-db","_","atfides.db\/default-db"]}

@@ -1,0 +1,1 @@
+{"version":3,"file":"\/Users\/mo\/Desktop\/cram\/atfides\/resources\/public\/js\/atfides\/views.js","sources":["views.cljs"],"lineCount":11,"mappings":";AAAA;;;;AAKA,2BAAA,3BAAMA;AAAN,AACE,IAAME,OAAK,kCAAA,mFAAA,rHAACC;AAAZ,AAAA,0FAAA,mDAAA,cAAA,AAAAF,0BACuBC","names":["atfides.views\/main-panel","cljs.core\/deref","name","re-frame.core\/subscribe"]}

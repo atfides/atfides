@@ -1,0 +1,2 @@
+;; Analyzed by ClojureScript 1.7.122
+{:use-macros nil, :excludes #{}, :name atfides.db, :imports nil, :requires nil, :uses nil, :defs {default-db {:name atfides.db/default-db, :file "src/cljs/atfides/db.cljs", :line 5, :column 1, :end-line 5, :end-column 16, :meta {:file "/Users/mo/Desktop/cram/atfides/src/cljs/atfides/db.cljs", :line 5, :column 6, :end-line 5, :end-column 16}}}, :require-macros nil, :cljs.analyzer/constants {:seen #{:name}, :order [:name]}, :doc nil}

@@ -1,0 +1,2 @@
+;; Analyzed by ClojureScript 1.7.122
+{:name atfides.subs, :doc nil, :excludes #{}, :use-macros nil, :require-macros nil, :uses nil, :requires {re-frame re-frame.core, re-frame.core re-frame.core}, :imports nil, :cljs.analyzer/constants {:seen #{:atfides.subs/name :name}, :order [:atfides.subs/name :name]}}

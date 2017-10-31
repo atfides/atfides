@@ -1,0 +1,2 @@
+;; Analyzed by ClojureScript 1.7.122
+{:name atfides.events, :doc nil, :excludes #{}, :use-macros nil, :require-macros nil, :uses nil, :requires {re-frame re-frame.core, re-frame.core re-frame.core, db atfides.db, atfides.db atfides.db}, :imports nil, :cljs.analyzer/constants {:seen #{:atfides.events/initialize-db}, :order [:atfides.events/initialize-db]}}
