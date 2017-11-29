@@ -1,18 +1,19 @@
 (defproject atfides "0.1.0-SNAPSHOT"
-
-  :dependencies [[org.clojure/clojure "1.7.0"]
-                 [org.clojure/clojurescript "1.7.122"]
+  :dependencies [[org.clojure/clojure "1.8.0"]
+                 [org.clojure/clojurescript "1.9.908"]
                  [reagent "0.7.0"]
-                 [cljsjs/c3 "0.4.14-0"]
+                 ;; [cljsjs/c3 "0.4.14-0"]
+                 ;; [chartkick "0.1.0"]
                  [org.clojure/core.async "0.1.346.0-17112a-alpha"]
                  [figwheel-sidecar "0.5.0"]
+                 [binaryage/devtools "0.9.7"]
                  [re-frame "0.10.2"]]
 
   :plugins [[lein-cljsbuild "1.1.4"]]
 
   :min-lein-version "2.5.3"
 
-  :source-paths ["src/clj"]
+  :source-paths ["src"]
 
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"]
 

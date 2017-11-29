@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f777d1f-7f16-40af-8db9-0e4f389c5dd8" name="Default" comment="" />
+    <list default="true" id="6f777d1f-7f16-40af-8db9-0e4f389c5dd8" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__args4j_2_0_26.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__cljsjs_c3_0_4_14_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__cljsjs_d3_3_5_5_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__com_google_code_findbugs_jsr305_1_3_9.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__com_google_code_gson_gson_2_2_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__com_google_guava_guava_18_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__com_google_javascript_closure_compiler_externs_v20150729.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__com_google_javascript_closure_compiler_v20150729.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__com_google_protobuf_protobuf_java_2_5_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_clojure_1_7_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_clojurescript_1_7_122.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_google_closure_library_0_0_20150805_acd8b553.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_google_closure_library_third_party_0_0_20150805_acd8b553.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_tools_reader_0_10_0_alpha3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.nrepl-port" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/atfides.iml" afterPath="$PROJECT_DIR$/atfides.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.clj" afterPath="$PROJECT_DIR$/project.clj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/public/index.html" afterPath="$PROJECT_DIR$/resources/public/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/clj/atfides/core.clj" afterPath="$PROJECT_DIR$/src/clj/atfides/core.clj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cljs/atfides/core.cljs" afterPath="$PROJECT_DIR$/src/cljs/atfides/core.cljs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cljs/atfides/db.cljs" afterPath="$PROJECT_DIR$/src/cljs/atfides/db.cljs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cljs/atfides/events.cljs" afterPath="$PROJECT_DIR$/src/cljs/atfides/events.cljs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cljs/atfides/subs.cljs" afterPath="$PROJECT_DIR$/src/cljs/atfides/subs.cljs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cljs/atfides/views.cljs" afterPath="$PROJECT_DIR$/src/cljs/atfides/views.cljs" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,28 +41,23 @@
     <favorites_list name="atfides" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="config.cljs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cljs/atfides/config.cljs">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="core.cljs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/cljs/atfides/core.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.cljs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/cljs/atfides/views.cljs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="345">
+              <caret line="23" column="14" lean-forward="false" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+              <folding>
+                <marker date="1511923064000" expanded="true" signature="440:496" ph="(defn mount-root ...)" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -44,20 +67,30 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/cljs/atfides/db.cljs" />
-        <option value="$PROJECT_DIR$/src/cljs/atfides/events.cljs" />
         <option value="$PROJECT_DIR$/script/repl.clj" />
-        <option value="$PROJECT_DIR$/src/clj/atfides/core.clj" />
-        <option value="$PROJECT_DIR$/src/cljs/atfides/views.cljs" />
-        <option value="$PROJECT_DIR$/src/cljs/atfides/core.cljs" />
         <option value="$PROJECT_DIR$/.nrepl-port" />
+        <option value="$PROJECT_DIR$/src/cljs/atfides/dump.cljs" />
+        <option value="$PROJECT_DIR$/resources/all.cljs" />
+        <option value="$PROJECT_DIR$/src/cljs/atfides/x-learning.cljs" />
+        <option value="$PROJECT_DIR$/resources/text.txt" />
+        <option value="$PROJECT_DIR$/src/clj/atfides/dump.clj" />
+        <option value="$PROJECT_DIR$/resources/test.html" />
+        <option value="$PROJECT_DIR$/resources/test.sh" />
+        <option value="$PROJECT_DIR$/resources/public/index.html" />
+        <option value="$PROJECT_DIR$/src/clj/atfides/core.clj" />
+        <option value="$PROJECT_DIR$/resources/test.md" />
         <option value="$PROJECT_DIR$/project.clj" />
+        <option value="$PROJECT_DIR$/src/cljs/atfides/views.cljs" />
+        <option value="$PROJECT_DIR$/src/cljs/atfides/subs.cljs" />
+        <option value="$PROJECT_DIR$/src/cljs/atfides/events.cljs" />
+        <option value="$PROJECT_DIR$/src/cljs/atfides/db.cljs" />
+        <option value="$PROJECT_DIR$/src/cljs/atfides/core.cljs" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1280" />
-    <option name="height" value="796" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -75,6 +108,9 @@
       </profile-state>
     </entry>
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -90,7 +126,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -123,13 +161,6 @@
               <item name="atfides" type="b2602c69:ProjectViewProjectNode" />
               <item name="atfides" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="clj" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="atfides" type="b2602c69:ProjectViewProjectNode" />
-              <item name="atfides" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="clj" type="462c0819:PsiDirectoryNode" />
               <item name="atfides" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -149,8 +180,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -160,7 +189,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="ReplState" timestamp="1509418549745">{:repl-history {:ide [], :local [{:command &quot;(figwheel-sidecar.repl-api/start-figwheel! (figwheel-sidecar.config/fetch-config))&quot;, :offset 82, :ns &quot;user&quot;} {:command &quot;(+ 34 3)&quot;, :offset 8, :ns &quot;atfides.core&quot;} {:command &quot;(js/console.log \&quot;sdfsdf\&quot;)&quot;, :offset 25, :ns &quot;atfides.core&quot;} {:command &quot;(js/console.log (take 4 (repeat \&quot;MO\&quot;)))&quot;, :offset 39, :ns &quot;atfides.core&quot;} {:command &quot;(take 4 (reagent.ratom \&quot;sdf\&quot;))&quot;, :offset 30, :ns &quot;atfides.core&quot;} {:command &quot;(take 4 (repeat \&quot;sdf\&quot;))&quot;, :offset 23, :ns &quot;atfides.core&quot;} {:command &quot;(js/console.log (str (take 4 (repeat \&quot;MO\&quot;))))&quot;, :offset 45, :ns &quot;atfides.core&quot;} {:command &quot;(str \&quot;sdf: \&quot; \&quot;sdf\&quot;)&quot;, :offset 19, :ns &quot;atfides.core&quot;} {:command &quot;(cljs.nodejs/require \&quot;c3\&quot;)&quot;, :offset 26, :ns &quot;atfides.core&quot;} {:command &quot;(nodejs/require \&quot;c3\&quot;)&quot;, :offset 21, :ns &quot;atfides.core&quot;} {:command &quot;(str C3)&quot;, :offset 8, :ns &quot;atfides.core&quot;} {:command &quot;(type C3)&quot;, :offset 9, :ns &quot;atfides.core&quot;} {:command &quot;(def C3 (require \&quot;c3\&quot;))&quot;, :offset 23, :ns &quot;atfides.core&quot;} {:command &quot;(def require (js* \&quot;require\&quot;))&quot;, :offset 29, :ns &quot;atfides.core&quot;} {:command &quot;(def C3 (nodejs/require \&quot;c3\&quot;))&quot;, :offset 30, :ns &quot;atfides.core&quot;} {:command &quot;(* 14 7)&quot;, :offset 8, :ns &quot;atfides.core&quot;} {:command &quot;(* 15 7)&quot;, :offset 8, :ns &quot;atfides.core&quot;} {:command &quot;(* 16 7)&quot;, :offset 8, :ns &quot;atfides.core&quot;} {:command &quot;(* 17 7)&quot;, :offset 8, :ns &quot;atfides.core&quot;} {:command &quot;(* 18 7)&quot;, :offset 8, :ns &quot;atfides.core&quot;} {:command &quot;(* 13 7)&quot;, :offset 8, :ns &quot;atfides.core&quot;} {:command &quot;(constantly nil)&quot;, :offset 16, :ns &quot;atfides.core&quot;} {:command &quot;(take 4 (constantly nil))&quot;, :offset 25, :ns &quot;atfides.core&quot;} {:command &quot;(type nodejs)&quot;, :offset 13, :ns &quot;atfides.core&quot;} {:command &quot;(js/c3.generate ({\n                  data: {\n                         columns: [\n                                   ['data1', 30]\n                                   ['data2', 70]]\n                         , type: 'pie'}}))&quot;, :offset 222, :ns &quot;atfides.core&quot;} {:command &quot;(js/c3.generate ({\n                  data: {\n                         columns: [\n                                   ['data1', 30]\n                                   ['data2', 70]\n                                   , type: 'pie']}}))&quot;, :offset 232, :ns &quot;atfides.core&quot;} {:command &quot;(def data {:data\n           {:columns\n            [\n             ['data1' 30]\n             ['data2' 70]]\n            :type 'pie'}})&quot;, :offset 131, :ns &quot;atfides.core&quot;} {:command &quot;(def data {:data\n           {:columns\n            [\n             [\&quot;data1\&quot; 30]\n             [\&quot;data2\&quot; 70]]\n            :type \&quot;pie\&quot;}})&quot;, :offset 131, :ns &quot;atfides.core&quot;} {:command &quot;(js/c3.generate data)&quot;, :offset 21, :ns &quot;atfides.core&quot;} {:command &quot;(js/generate data)&quot;, :offset 18, :ns &quot;atfides.core&quot;} {:command &quot;(js/c3 data)&quot;, :offset 12, :ns &quot;atfides.core&quot;} {:command &quot;(. js/c3 generate data)&quot;, :offset 23, :ns &quot;atfides.core&quot;} {:command &quot;(.. js/c3 generate data)&quot;, :offset 24, :ns &quot;atfides.core&quot;} {:command &quot;(js/c3.chart data)&quot;, :offset 18, :ns &quot;atfides.core&quot;} {:command &quot;(print data)&quot;, :offset 12, :ns &quot;atfides.core&quot;} {:command &quot;(.generate js/c3 data)&quot;, :offset 22, :ns &quot;atfides.core&quot;}], :remote []}}</component>
+  <component name="ReplState" timestamp="1511924528223">{:repl-history {:ide [], :local [{:command &quot;(prn rf/subscribe [::subs/pub-keys])&quot;, :offset 36, :ns &quot;atfides.views&quot;} {:command &quot;(prn test)&quot;, :offset 10, :ns &quot;atfides.views&quot;} {:command &quot;(prn @test)&quot;, :offset 11, :ns &quot;atfides.views&quot;} {:command &quot;(def test (rf/subscribe [::subs/pub-keys]))&quot;, :offset 43, :ns &quot;atfides.views&quot;} {:command &quot;(str @test)&quot;, :offset 11, :ns &quot;atfides.views&quot;} {:command &quot;(prn main-panel)&quot;, :offset 16, :ns &quot;atfides.views&quot;} {:command &quot;(str @test-m)&quot;, :offset 13, :ns &quot;atfides.views&quot;} {:command &quot;(defn main-panel []\n  (let [name (rf/subscribe [::subs/pub-keys])]\n    [:div\n     [:div \&quot;Hello from \&quot; @name]\n     [:div#vis\n      [:p \&quot;Your viz goes here: --- \&quot;]]]))&quot;, :offset 165, :ns &quot;atfides.views&quot;} {:command &quot;(defn main-panel []\n  (let [name (rf/subscribe [::subs/pub-keys])]\n    [:div.greeting\n     \&quot;Hello from \&quot;\n     [:input {:type \&quot;text\&quot;}]]))&quot;, :offset 136, :ns &quot;atfides.views&quot;} {:command &quot;(+ 4 3)&quot;, :offset 7, :ns &quot;atfides.views&quot;} {:command &quot;(def data [[175 60] [190 80] [180 75]])&quot;, :offset 39, :ns &quot;atfides.core&quot;} {:command &quot;(ns atfides.core\n  (:require [chartkick.core :as chart]))&quot;, :offset 57, :ns &quot;atfides.core&quot;} {:command &quot;(chart/line-chart data)&quot;, :offset 23, :ns &quot;atfides.core&quot;} {:command &quot;(io/resources \&quot;public/js/index.html\&quot;)&quot;, :offset 37, :ns &quot;atfides.core&quot;} {:command &quot;(io/resource \&quot;/public/js/index.html\&quot;)&quot;, :offset 37, :ns &quot;atfides.core&quot;} {:command &quot;(io/resource \&quot;public/js/index.html\&quot;)&quot;, :offset 36, :ns &quot;atfides.core&quot;} {:command &quot;(io/resource \&quot;public/all.cljs\&quot;)&quot;, :offset 31, :ns &quot;atfides.core&quot;} {:command &quot;(prn (io/resource \&quot;public/all.cljs\&quot;))&quot;, :offset 37, :ns &quot;atfides.core&quot;} {:command &quot;(prn (slurp (io/resource \&quot;public/all.cljs\&quot;)))&quot;, :offset 45, :ns &quot;atfides.core&quot;} {:command &quot;(prn (slurp (io/resource \&quot;all.cljs\&quot;)))&quot;, :offset 38, :ns &quot;atfides.core&quot;} {:command &quot;(frequencies all-cljs)&quot;, :offset 22, :ns &quot;atfides.core&quot;} {:command &quot;(defn all-cljs (slurp (io/resource \&quot;all.cljs\&quot;)))&quot;, :offset 48, :ns &quot;atfides.core&quot;} {:command &quot;(slurp (io/resource \&quot;all.cljs\&quot;))&quot;, :offset 32, :ns &quot;atfides.core&quot;} {:command &quot;(split-at all-string #\&quot; \&quot;)&quot;, :offset 26, :ns &quot;atfides.core&quot;} {:command &quot;(split-with #\&quot; \&quot; all-string)&quot;, :offset 28, :ns &quot;atfides.core&quot;} {:command &quot;(def all-string (slurp (io/resource \&quot;all.cljs\&quot;)))&quot;, :offset 49, :ns &quot;atfides.core&quot;} {:command &quot;(.split all-string #\&quot; \&quot;)&quot;, :offset 24, :ns &quot;atfides.core&quot;} {:command &quot;(.split all-string #\&quot;  \&quot;)&quot;, :offset 25, :ns &quot;atfides.core&quot;} {:command &quot;(.split all-string \&quot; \&quot;)&quot;, :offset 23, :ns &quot;atfides.core&quot;} {:command &quot;(frequencies (.split all-string \&quot; \&quot;))&quot;, :offset 37, :ns &quot;atfides.core&quot;} {:command &quot;(str/split all-string #\&quot; \&quot;)&quot;, :offset 27, :ns &quot;atfides.core&quot;} {:command &quot;(str/split all-string \&quot; \&quot;)&quot;, :offset 26, :ns &quot;atfides.core&quot;} {:command &quot;(frequencies (apply str/trim  (.split all-string \&quot; \&quot;)))&quot;, :offset 55, :ns &quot;atfides.core&quot;} {:command &quot;(apply str/trim  (.split all-string \&quot; \&quot;))&quot;, :offset 41, :ns &quot;atfides.core&quot;} {:command &quot;(apply str/trim  #\&quot; \&quot; (.split all-string))&quot;, :offset 42, :ns &quot;atfides.core&quot;} {:command &quot;(apply str/trim  \&quot; \&quot; (.split all-string))&quot;, :offset 41, :ns &quot;atfides.core&quot;} {:command &quot;(.split test-md)&quot;, :offset 16, :ns &quot;atfides.core&quot;} {:command &quot;(str/split #\&quot; \&quot; test-md)&quot;, :offset 24, :ns &quot;atfides.core&quot;} {:command &quot;(str/split \&quot; \&quot; test-md)&quot;, :offset 23, :ns &quot;atfides.core&quot;} {:command &quot;(def test-md (slurp (io/resource \&quot;test.md\&quot;)))&quot;, :offset 45, :ns &quot;atfides.core&quot;} {:command &quot;(.split \&quot; \&quot; test-md)&quot;, :offset 20, :ns &quot;atfides.core&quot;} {:command &quot;(def is-link #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot;)&quot;, :offset 54, :ns &quot;atfides.core&quot;} {:command &quot;(is-link \&quot;asddfs\&quot;)&quot;, :offset 18, :ns &quot;atfides.core&quot;} {:command &quot;(is-link \&quot;https://google.com\&quot;)&quot;, :offset 30, :ns &quot;atfides.core&quot;} {:command &quot;(re-seq #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot;  \&quot;sdf \&quot;)&quot;, :offset 57, :ns &quot;atfides.core&quot;} {:command &quot;(re-seq #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot;  link)&quot;, :offset 55, :ns &quot;atfides.core&quot;} {:command &quot;(re-find #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot;  link)&quot;, :offset 56, :ns &quot;atfides.core&quot;} {:command &quot;(io/resource \&quot;js/index.hmtl\&quot;)&quot;, :offset 29, :ns &quot;atfides.core&quot;} {:command &quot;(io/resource \&quot;index.hmtl\&quot;)&quot;, :offset 26, :ns &quot;atfides.core&quot;} {:command &quot;(io/resource \&quot;public/js/index.hmtl\&quot;)&quot;, :offset 36, :ns &quot;atfides.core&quot;} {:command &quot;(io/resource \&quot;all.cljs\&quot;)&quot;, :offset 24, :ns &quot;atfides.core&quot;} {:command &quot;(io/resource \&quot;public/index.hmtl\&quot;)&quot;, :offset 33, :ns &quot;atfides.core&quot;} {:command &quot;(io/resource \&quot;test.hmtl\&quot;)&quot;, :offset 25, :ns &quot;atfides.core&quot;} {:command &quot;(io/resource \&quot;test.html\&quot;)&quot;, :offset 25, :ns &quot;atfides.core&quot;} {:command &quot;(re-find #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot;  web-con)&quot;, :offset 59, :ns &quot;atfides.core&quot;} {:command &quot;(re-pattern #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; web-con)&quot;, :offset 61, :ns &quot;atfides.core&quot;} {:command &quot;(re-matcher #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; web-con)&quot;, :offset 61, :ns &quot;atfides.core&quot;} {:command &quot;(first (re-find #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; web-con))&quot;, :offset 66, :ns &quot;atfides.core&quot;} {:command &quot;(second (re-find #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; web-con))&quot;, :offset 67, :ns &quot;atfides.core&quot;} {:command &quot;(re-find #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; web-con)&quot;, :offset 58, :ns &quot;atfides.core&quot;} {:command &quot;(iterate (re-find #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; web-con))&quot;, :offset 68, :ns &quot;atfides.core&quot;} {:command &quot;(iterate #(re-find #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; %) web-con)&quot;, :offset 71, :ns &quot;atfides.core&quot;} {:command &quot;(iterate (map #(re-find #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; %) web-con))&quot;, :offset 77, :ns &quot;atfides.core&quot;} {:command &quot;(seq web-con)&quot;, :offset 13, :ns &quot;atfides.core&quot;} {:command &quot;(re-seq #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; web-con)&quot;, :offset 57, :ns &quot;atfides.core&quot;} {:command &quot;(-&gt; (re-seq #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; web-con)\n    second)&quot;, :offset 73, :ns &quot;atfides.core&quot;} {:command &quot;(-&gt; (re-seq #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; web-con)\n    (map second %))&quot;, :offset 81, :ns &quot;atfides.core&quot;} {:command &quot;(-&gt; (re-seq #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; web-con)\n    (map second ))&quot;, :offset 80, :ns &quot;atfides.core&quot;} {:command &quot;(map second (re-seq #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; web-con))&quot;, :offset 70, :ns &quot;atfides.core&quot;} {:command &quot;(defn get-all-links\n  \&quot;Gets all links from the requested page\&quot;\n  [dom-page]\n  (map second (re-seq #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; dom-page)))&quot;, :offset 150, :ns &quot;atfides.core&quot;} {:command &quot;(get-all-links web-con)&quot;, :offset 23, :ns &quot;atfides.core&quot;} {:command &quot;(defn pick-random-link\n  \&quot;Picks a random link out of all in the page\&quot;\n  [all-links]\n  (randnth all-links))&quot;, :offset 106, :ns &quot;atfides.core&quot;} {:command &quot;(rand-nth (get-all-links web-con))&quot;, :offset 34, :ns &quot;atfides.core&quot;} {:command &quot;(defn pick-random-link\n  \&quot;Picks a random link out of all in the page\&quot;\n  [all-links]\n  (rand-nth all-links))&quot;, :offset 107, :ns &quot;atfides.core&quot;} {:command &quot;(pick-random-link (get-all-links web-con))&quot;, :offset 42, :ns &quot;atfides.core&quot;} {:command &quot;(def web-con (slurp (io/resource \&quot;test.html\&quot;)))&quot;, :offset 47, :ns &quot;atfides.core&quot;} {:command &quot;(seq #\&quot; \&quot; web-con)&quot;, :offset 18, :ns &quot;atfides.core&quot;} {:command &quot;(prn web-con)&quot;, :offset 13, :ns &quot;atfides.core&quot;} {:command &quot;(def link \&quot;https://google.com\&quot;)&quot;, :offset 31, :ns &quot;atfides.core&quot;} {:command &quot;(loop []\n  (prn \&quot;&gt;&gt;&gt;&gt;&gt;&gt;\&quot;)\n  (do \n    (prn \&quot;something\&quot;)\n    (recur)))&quot;, :offset 68, :ns &quot;atfides.core&quot;} {:command &quot;(rand-int 5)&quot;, :offset 12, :ns &quot;atfides.core&quot;} {:command &quot;(ns atfides.core\n  (:require\n    [clojure.string :as str]\n    [clojure.java.shell :only [sh]]\n    [clojure.java.io :as io]\n    [clojure.java.shell :as sh]))&quot;, :offset 156, :ns &quot;atfides.core&quot;} {:command &quot;(sh/*sh-dir*)&quot;, :offset 13, :ns &quot;atfides.core&quot;} {:command &quot;(ns atfides.core\n  (:require\n    [clojure.string :as str]\n    [clojure.java.shell :only [sh]]\n    [clojure.java.io :as io]))&quot;, :offset 124, :ns &quot;atfides.core&quot;} {:command &quot;(sh \&quot;ls\&quot;)&quot;, :offset 9, :ns &quot;atfides.core&quot;} {:command &quot;(println (:out (sh \&quot;cat\&quot; \&quot;-\&quot; :in \&quot;Printing like ' \\\&quot; $@ &amp; \&quot;)))&quot;, :offset 62, :ns &quot;atfides.core&quot;} {:command &quot;(defn is-link\n  \&quot;Checks whether a string is a standard link\&quot;\n  [link]\n  (re-seq #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; link))&quot;, :offset 127, :ns &quot;atfides.core&quot;} {:command &quot;(println (:out (sh \&quot;ls\&quot; \&quot;-\&quot; :in \&quot;Printing like ' \\\&quot; $@ &amp; \&quot;)))&quot;, :offset 61, :ns &quot;atfides.core&quot;} {:command &quot;(clojure.java.shell/sh \&quot;echo 'sdf'\&quot;)&quot;, :offset 36, :ns &quot;atfides.core&quot;} {:command &quot;(clojure.java.shell/sh \&quot;cat 'sdf'\&quot;)&quot;, :offset 35, :ns &quot;atfides.core&quot;} {:command &quot;(clojure.java.shell/sh \&quot;cat 'sdf' \&quot;)&quot;, :offset 36, :ns &quot;atfides.core&quot;} {:command &quot;(clojure.java.shell/sh \&quot;ls\&quot;)&quot;, :offset 28, :ns &quot;atfides.core&quot;} {:command &quot;(io/resource \&quot;test.sh\&quot;)&quot;, :offset 23, :ns &quot;atfides.core&quot;} {:command &quot;(clojure.java.shell/sh scr)&quot;, :offset 27, :ns &quot;atfides.core&quot;} {:command &quot;(str \&quot;.\&quot; scr)&quot;, :offset 13, :ns &quot;atfides.core&quot;} {:command &quot;(clojure.java.shell/sh (str \&quot;.\&quot; scr))&quot;, :offset 37, :ns &quot;atfides.core&quot;} {:command &quot;(str \&quot;./\&quot; scr)&quot;, :offset 14, :ns &quot;atfides.core&quot;} {:command &quot;(clojure.java.shell/sh (str \&quot;./\&quot; scr))&quot;, :offset 38, :ns &quot;atfides.core&quot;} {:command &quot;(clojure.java.shell/sh (exec scr))&quot;, :offset 34, :ns &quot;atfides.core&quot;} {:command &quot;(def scr (io/resource \&quot;test.sh\&quot;))&quot;, :offset 33, :ns &quot;atfides.core&quot;} {:command &quot;(clojure.java.shell/sh (cat scr))&quot;, :offset 33, :ns &quot;atfides.core&quot;}], :remote []}}</component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -308,14 +337,14 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.140625" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36875" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.006666667" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.80536914" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15703125" sideWeight="0.80536914" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -336,7 +365,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4078125" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4515625" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -351,12 +380,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.006666667" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.80536914" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.19463088" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.19463088" order="5" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -367,11 +396,85 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/cljs/atfides/views.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clj/atfides/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clj/atfides/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cljs/atfides/views.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cljs/atfides/views.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cljs/atfides/views.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cljs/atfides/views.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cljs/atfides/views.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cljs/atfides/views.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/cljs/atfides/core.cljs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1511923064000" expanded="true" signature="440:496" ph="(defn mount-root ...)" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -379,7 +482,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -387,45 +489,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="7" lean-forward="false" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cljs/atfides/subs.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <marker date="1509197618000" expanded="true" signature="0:59" ph="(ns atfides.subs ...)" />
-            <marker date="1509197618000" expanded="true" signature="61:112" ph="(re-frame/reg-sub ...)" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cljs/atfides/events.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <marker date="1509360319000" expanded="true" signature="0:93" ph="(ns atfides.events ...)" />
-            <marker date="1509360319000" expanded="true" signature="96:166" ph="(re-frame/reg-event-db ...)" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cljs/atfides/db.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/clj/atfides/core.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -433,15 +496,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cljs/atfides/core.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -449,15 +503,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-368">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -465,7 +510,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="37" lean-forward="false" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cljs/atfides/dump.cljs" />
+    <entry file="file://$PROJECT_DIR$/resources/text.txt" />
+    <entry file="file://$PROJECT_DIR$/resources/test.sh" />
+    <entry file="file://$PROJECT_DIR$/resources/test.html" />
+    <entry file="file://$PROJECT_DIR$/resources/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/all.cljs" />
+    <entry file="file://$PROJECT_DIR$/src/cljs/atfides/x-learning.cljs" />
+    <entry file="file://$PROJECT_DIR$/src/clj/atfides/dump.clj" />
+    <entry file="file://$PROJECT_DIR$/src/clj/atfides/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -473,15 +538,57 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/test.md" />
+    <entry file="file://$PROJECT_DIR$/project.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="19" lean-forward="false" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cljs/atfides/views.cljs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cljs/atfides/subs.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cljs/atfides/events.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cljs/atfides/db.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="16" lean-forward="false" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cljs/atfides/core.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="14" lean-forward="false" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+          <folding>
+            <marker date="1511923064000" expanded="true" signature="440:496" ph="(defn mount-root ...)" />
+          </folding>
         </state>
       </provider>
     </entry>

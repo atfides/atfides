@@ -1,6 +1,6 @@
-(ns atfides.core)
+(ns atfides.core
+  (:require
+    [clojure.string :as str]
+    [clojure.java.io :as io]))
 
-
-
-
-(+ 34 3)
+;; later

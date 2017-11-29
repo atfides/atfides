@@ -1,31 +1,17 @@
 (ns atfides.views
-  (:require [re-frame.core :as re-frame]
-            [cljs.c3]
+  (:require [re-frame.core :as rf]
             [atfides.subs :as subs]))
 
 
-(def data {:data
-           {:columns
-                  [
-                   ["data1" 30]
-                   ["data2" 70]]
-            :type "pie"}})
-
-(.-version js/c3)
-
-
-(def newdata (clj->js data))
-
-(def mychart (.generate js/c3 newdata))
-
 (defn main-panel []
-  [:div mychart])
-
-;; (main-panel)
+  [:h1 "Hello world"])
 
 
-;; (defn main-panel []
-;;   (let [name (re-frame/subscribe [::subs/name])]
-;;    [:div "Hello from " @name])
-
-
+(defn main-panel-test []
+  (let [name (rf/subscribe [::subs/pub-keys])]
+    [:div.greeting
+     "Hello from "
+     [:input {:type "text"
+              :value @(rf/subscribe [:pub-keys])
+              :on-change #(rf/dispatch [:pub-keys]
+                                       (-> % .-target .-value))}]]))
