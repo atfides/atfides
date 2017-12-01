@@ -3,10 +3,8 @@
             [cljs.reader]))
 
 ;; -- Default db Value ------------------
-
 (def default-db
   {:pub-keys (sorted-map)})
-
 
 ;; -- Local Storage ---------------------
 ;; The submitted public keys are never sent out

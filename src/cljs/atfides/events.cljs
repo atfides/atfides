@@ -1,6 +1,5 @@
 (ns atfides.events
   (:require [re-frame.core :as rf]
-            ;; [cljs.core]
             [atfides.db :as db]))
 
 ;; -- Storing pub-keys to localStore --------
@@ -24,8 +23,6 @@
   ((fnil inc 0) (last (keys pub-keys))))
 
 
-
-
 ;; -- Event Handlers -------------------------
 ;;
 ;; There are only 3 event:
@@ -35,7 +32,7 @@
 ;; usage: > (dispatch [:initialise-db])
 ;; fetch related data if pre-existing pub-keys
 
-(rf/reg-event-db
+(rf/reg-event-fx
  :initialise-db
 
  ;; Interceptor chain to launch > keep appending if others
@@ -64,6 +61,7 @@
 (rf/reg-event-db
   :delete-pub-key
 
+  ;; looks after deleting a pub-key from local store
   pub-keys-interceptors
 
   (fn [pub-keys id]

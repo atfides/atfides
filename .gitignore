@@ -9,10 +9,9 @@ pom.xml
 /resources/public/js/compiled
 out
 .lein-repl-history
-.idea*
 /.lein-*
 /.nrepl-port
-atfides.iml
+*.iml
+.idea/
 .nrepl-port
-.idea/workspace.xml
 /atfides.iml
