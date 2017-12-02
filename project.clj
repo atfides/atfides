@@ -1,6 +1,9 @@
 (defproject atfides "0.1.0-SNAPSHOT"
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.9.908"]
+                 ;; clj
+
+                 ;; cljs
                  [reagent "0.7.0"]
                  ;; [cljsjs/c3 "0.4.14-0"]
                  ;; [chartkick "0.1.0"]

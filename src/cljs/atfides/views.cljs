@@ -9,19 +9,41 @@
             [reagent.core :as r]))
 
 
+(defn target-value
+  "updates value in form text field"
+  [e]
+  (aget e "target" "value"))
+
 (defn home-page []
   [ui/mui-theme-provider
    {:mui-theme (get-mui-theme
                  ;; (aget js/MaterialUIStyles "DarkRawTheme"))}
                  {:palette {:text-color (color :green600)}})}
+
    [:div
-    [ui/app-bar {:title "Total Wealth: $0"
+    [ui/app-bar {:title "Total: $0"
                  :icon-element-right
                         (r/as-element [ui/icon-button
                                        (ic/action-account-balance-wallet)])}]
-    [ui/raised-button {:label        "Click me"
-                        :icon         (ic/action-account-box)
-                        :on-click     #(println "clicked")}]]])
+
+    [ui/text-field {:floating-label-text "Enter a Public Address"
+                    :type :text
+                    ;; :length 1000
+                    ;; :size 1000
+                    ;; :expand nil
+                    ;; :style to->path
+                    :min 20 ;; check minimum public addr length
+                    :on-change #(target-value %)}]
+
+    [ui/raised-button {:label "Enter"
+                       :primary true
+                       :padding-left 30
+                       :margin-left 30}]]])
+
+                       ;; :href (u/path-for :skills-create)}]]])
+
+
+
 
 
 (defn main-panel []
