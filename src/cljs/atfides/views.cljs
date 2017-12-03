@@ -1,5 +1,6 @@
 (ns atfides.views
   (:require [re-frame.core :as rf]
+            [clojure.string :as str]
             [cljsjs.material-ui]
             [reagent.core :as r]
             [atfides.subs :as subs]
@@ -14,6 +15,30 @@
   [e]
   (aget e "target" "value"))
 
+(defn pub-key-input [{:keys [title on-save on-stop]}]
+  (let [val (r/atom title)
+        stop #(do (reset! val "")
+                  (when on-stop (on-stop)))
+        save #(let [v (-> @val str str/trim)]
+                (when (seq v) (on-save v)))]
+    (fn [props]
+      [ui/text-field (merge props
+                            {:type :type
+                             :value @val
+                             :on-blur save
+                             :on-change #(reset! val (-> % .-target .-value))
+                             :on-key-down #(case (.-which %)
+                                             13 (save)
+                                             27 (stop)
+                                             nil)})])))
+
+(defn pub-key-entry
+  []
+  [pub-key-input
+   {:id "new-pub-key"
+    :floating-label-text "Enter a new public address..."
+    :on-save #(rf/dispatch [:add-pub-key %])}])
+
 (defn home-page []
   [ui/mui-theme-provider
    {:mui-theme (get-mui-theme
@@ -26,27 +51,17 @@
                         (r/as-element [ui/icon-button
                                        (ic/action-account-balance-wallet)])}]
 
-    [ui/text-field {:floating-label-text "Enter a Public Address"
-                    :type :text
-                    ;; :length 1000
-                    ;; :size 1000
-                    ;; :expand nil
-                    ;; :style to->path
-                    :min 20 ;; check minimum public addr length
-                    ;; :value @(rf/subscribe [:]) <- not needed
-                    ;; :on-change #(rf/dispatch [:add-pub-key (target-value %)])
-                    :on-change #(target-value %)}]
+    [pub-key-entry]
     [:br]
     [ui/raised-button {:label "Enter"
-                       :secondary true}]]])
+                       :secondary true
+                       :on-click #(rf/dispatch [:add-pub-key %])}]]])
                        ;; :padding-left 30
                        ;; :margin-left 30}]]])
 
-                       ;; :href (u/path-for :skills-create)}]]])
-
 
 (defn main-panel []
-  [:div [:h1 "Test First Component"]
+  [:div [:h2 "Test First Component"]
         (home-page)])
 
 
