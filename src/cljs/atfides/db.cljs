@@ -4,14 +4,14 @@
 
 ;; -- Default db Value ------------------
 (def default-db
-  {:pub-keys (sorted-map)})
+  {:local-pub-keys (sorted-map)})
 
 ;; -- Local Storage ---------------------
 ;; The submitted public keys are never sent out
 ;; They will stick to the browser under default settings
 ;; When the user comes back the pub-keys are retrieved
 
-(def ls-key "public-keys")       ;; localStore key
+(def ls-key "public-keys")       ;; localStore key (yes learning from re-frame docs :)
 
 (defn pub-keys->local-store
   "Saves the public keys onto localStorage"

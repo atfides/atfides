@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="6f777d1f-7f16-40af-8db9-0e4f389c5dd8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/atfides.iml" afterPath="$PROJECT_DIR$/atfides.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.clj" afterPath="$PROJECT_DIR$/project.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/clj/atfides/core.clj" afterPath="$PROJECT_DIR$/src/clj/atfides/core.clj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cljs/atfides/core.cljs" afterPath="$PROJECT_DIR$/src/cljs/atfides/core.cljs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cljs/atfides/db.cljs" afterPath="$PROJECT_DIR$/src/cljs/atfides/db.cljs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cljs/atfides/events.cljs" afterPath="$PROJECT_DIR$/src/cljs/atfides/events.cljs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cljs/atfides/subs.cljs" afterPath="$PROJECT_DIR$/src/cljs/atfides/subs.cljs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cljs/atfides/views.cljs" afterPath="$PROJECT_DIR$/src/cljs/atfides/views.cljs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,11 +23,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.cljs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.cljs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cljs/atfides/views.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="3" lean-forward="false" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
+            <state relative-caret-position="405">
+              <caret line="42" column="38" lean-forward="false" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="core.cljs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/cljs/atfides/core.cljs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+              <folding>
+                <marker date="1512281673000" expanded="true" signature="0:340" ph="(ns atfides.core ...)" />
+                <marker date="1512281673000" expanded="true" signature="693:749" ph="(defn mount-root ...)" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="project.clj" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project.clj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -52,14 +92,14 @@
         <option value="$PROJECT_DIR$/resources/test.html" />
         <option value="$PROJECT_DIR$/resources/test.sh" />
         <option value="$PROJECT_DIR$/resources/test.md" />
+        <option value="$PROJECT_DIR$/resources/public/index.html" />
+        <option value="$PROJECT_DIR$/src/clj/atfides/core.clj" />
         <option value="$PROJECT_DIR$/src/cljs/atfides/subs.cljs" />
         <option value="$PROJECT_DIR$/src/cljs/atfides/db.cljs" />
         <option value="$PROJECT_DIR$/src/cljs/atfides/events.cljs" />
-        <option value="$PROJECT_DIR$/resources/public/index.html" />
-        <option value="$PROJECT_DIR$/src/cljs/atfides/core.cljs" />
-        <option value="$PROJECT_DIR$/src/clj/atfides/core.clj" />
-        <option value="$PROJECT_DIR$/project.clj" />
         <option value="$PROJECT_DIR$/src/cljs/atfides/views.cljs" />
+        <option value="$PROJECT_DIR$/src/cljs/atfides/core.cljs" />
+        <option value="$PROJECT_DIR$/project.clj" />
       </list>
     </option>
   </component>
@@ -101,8 +141,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -155,7 +196,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -164,7 +204,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="ReplState" timestamp="1512197963161">{:repl-history {:ide [], :local [{:command &quot;(first (re-find #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; web-con))&quot;, :offset 66, :ns &quot;atfides.core&quot;} {:command &quot;(second (re-find #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; web-con))&quot;, :offset 67, :ns &quot;atfides.core&quot;} {:command &quot;(re-find #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; web-con)&quot;, :offset 58, :ns &quot;atfides.core&quot;} {:command &quot;(iterate (re-find #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; web-con))&quot;, :offset 68, :ns &quot;atfides.core&quot;} {:command &quot;(iterate #(re-find #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; %) web-con)&quot;, :offset 71, :ns &quot;atfides.core&quot;} {:command &quot;(iterate (map #(re-find #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; %) web-con))&quot;, :offset 77, :ns &quot;atfides.core&quot;} {:command &quot;(seq web-con)&quot;, :offset 13, :ns &quot;atfides.core&quot;} {:command &quot;(re-seq #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; web-con)&quot;, :offset 57, :ns &quot;atfides.core&quot;} {:command &quot;(-&gt; (re-seq #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; web-con)\n    second)&quot;, :offset 73, :ns &quot;atfides.core&quot;} {:command &quot;(-&gt; (re-seq #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; web-con)\n    (map second %))&quot;, :offset 81, :ns &quot;atfides.core&quot;} {:command &quot;(-&gt; (re-seq #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; web-con)\n    (map second ))&quot;, :offset 80, :ns &quot;atfides.core&quot;} {:command &quot;(map second (re-seq #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; web-con))&quot;, :offset 70, :ns &quot;atfides.core&quot;} {:command &quot;(defn get-all-links\n  \&quot;Gets all links from the requested page\&quot;\n  [dom-page]\n  (map second (re-seq #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; dom-page)))&quot;, :offset 150, :ns &quot;atfides.core&quot;} {:command &quot;(get-all-links web-con)&quot;, :offset 23, :ns &quot;atfides.core&quot;} {:command &quot;(defn pick-random-link\n  \&quot;Picks a random link out of all in the page\&quot;\n  [all-links]\n  (randnth all-links))&quot;, :offset 106, :ns &quot;atfides.core&quot;} {:command &quot;(rand-nth (get-all-links web-con))&quot;, :offset 34, :ns &quot;atfides.core&quot;} {:command &quot;(defn pick-random-link\n  \&quot;Picks a random link out of all in the page\&quot;\n  [all-links]\n  (rand-nth all-links))&quot;, :offset 107, :ns &quot;atfides.core&quot;} {:command &quot;(pick-random-link (get-all-links web-con))&quot;, :offset 42, :ns &quot;atfides.core&quot;} {:command &quot;(def web-con (slurp (io/resource \&quot;test.html\&quot;)))&quot;, :offset 47, :ns &quot;atfides.core&quot;} {:command &quot;(seq #\&quot; \&quot; web-con)&quot;, :offset 18, :ns &quot;atfides.core&quot;} {:command &quot;(prn web-con)&quot;, :offset 13, :ns &quot;atfides.core&quot;} {:command &quot;(def link \&quot;https://google.com\&quot;)&quot;, :offset 31, :ns &quot;atfides.core&quot;} {:command &quot;(loop []\n  (prn \&quot;&gt;&gt;&gt;&gt;&gt;&gt;\&quot;)\n  (do \n    (prn \&quot;something\&quot;)\n    (recur)))&quot;, :offset 68, :ns &quot;atfides.core&quot;} {:command &quot;(rand-int 5)&quot;, :offset 12, :ns &quot;atfides.core&quot;} {:command &quot;(ns atfides.core\n  (:require\n    [clojure.string :as str]\n    [clojure.java.shell :only [sh]]\n    [clojure.java.io :as io]\n    [clojure.java.shell :as sh]))&quot;, :offset 156, :ns &quot;atfides.core&quot;} {:command &quot;(sh/*sh-dir*)&quot;, :offset 13, :ns &quot;atfides.core&quot;} {:command &quot;(ns atfides.core\n  (:require\n    [clojure.string :as str]\n    [clojure.java.shell :only [sh]]\n    [clojure.java.io :as io]))&quot;, :offset 124, :ns &quot;atfides.core&quot;} {:command &quot;(sh \&quot;ls\&quot;)&quot;, :offset 9, :ns &quot;atfides.core&quot;} {:command &quot;(println (:out (sh \&quot;cat\&quot; \&quot;-\&quot; :in \&quot;Printing like ' \\\&quot; $@ &amp; \&quot;)))&quot;, :offset 62, :ns &quot;atfides.core&quot;} {:command &quot;(defn is-link\n  \&quot;Checks whether a string is a standard link\&quot;\n  [link]\n  (re-seq #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; link))&quot;, :offset 127, :ns &quot;atfides.core&quot;} {:command &quot;(println (:out (sh \&quot;ls\&quot; \&quot;-\&quot; :in \&quot;Printing like ' \\\&quot; $@ &amp; \&quot;)))&quot;, :offset 61, :ns &quot;atfides.core&quot;} {:command &quot;(clojure.java.shell/sh \&quot;echo 'sdf'\&quot;)&quot;, :offset 36, :ns &quot;atfides.core&quot;} {:command &quot;(clojure.java.shell/sh \&quot;cat 'sdf'\&quot;)&quot;, :offset 35, :ns &quot;atfides.core&quot;} {:command &quot;(clojure.java.shell/sh \&quot;cat 'sdf' \&quot;)&quot;, :offset 36, :ns &quot;atfides.core&quot;} {:command &quot;(clojure.java.shell/sh \&quot;ls\&quot;)&quot;, :offset 28, :ns &quot;atfides.core&quot;} {:command &quot;(io/resource \&quot;test.sh\&quot;)&quot;, :offset 23, :ns &quot;atfides.core&quot;} {:command &quot;(clojure.java.shell/sh scr)&quot;, :offset 27, :ns &quot;atfides.core&quot;} {:command &quot;(str \&quot;.\&quot; scr)&quot;, :offset 13, :ns &quot;atfides.core&quot;} {:command &quot;(clojure.java.shell/sh (str \&quot;.\&quot; scr))&quot;, :offset 37, :ns &quot;atfides.core&quot;} {:command &quot;(str \&quot;./\&quot; scr)&quot;, :offset 14, :ns &quot;atfides.core&quot;} {:command &quot;(clojure.java.shell/sh (str \&quot;./\&quot; scr))&quot;, :offset 38, :ns &quot;atfides.core&quot;} {:command &quot;(clojure.java.shell/sh (exec scr))&quot;, :offset 34, :ns &quot;atfides.core&quot;} {:command &quot;(def scr (io/resource \&quot;test.sh\&quot;))&quot;, :offset 33, :ns &quot;atfides.core&quot;} {:command &quot;(clojure.java.shell/sh (cat scr))&quot;, :offset 33, :ns &quot;atfides.core&quot;} {:command &quot;(defn ^:export init []\n  (re-frame/dispatch-sync [::events/initialise-db])\n  (dev-setup)\n  (mount-root))&quot;, :offset 104, :ns &quot;atfides.core&quot;} {:command &quot;(init)&quot;, :offset 6, :ns &quot;atfides.core&quot;} {:command &quot;(re-frame/dispatch-sync [::events/initialise-db])&quot;, :offset 49, :ns &quot;atfides.core&quot;} {:command &quot;(enable-console-print!)&quot;, :offset 23, :ns &quot;atfides.core&quot;} {:command &quot;(defn main-panel []\n  [:div\n    [:h1 \&quot;Hello world\&quot;]\n    (test-c)])&quot;, :offset 66, :ns &quot;atfides.views&quot;} {:command &quot;(ns atfides.views\n  (:require [re-frame.core :as rf]\n            [atfides.subs :as subs]\n            [cljsjs.material-ui]\n            [cljsjs.material-ui.core :as ui]\n            [cljsjs.material-ui.icons :as ic]))&quot;, :offset 214, :ns &quot;atfides.views&quot;} {:command &quot;(defn test-c []\n  (ui/mui-theme-provider\n    {:mui-theme (ui/get-mui-theme)}\n    (ui/paper \&quot;Hello World\&quot;)))&quot;, :offset 107, :ns &quot;atfides.views&quot;} {:command &quot;(test-c)&quot;, :offset 8, :ns &quot;atfides.views&quot;} {:command &quot;(defn main-panel []\n  [:h1 \&quot;Hello world\&quot;])&quot;, :offset 42, :ns &quot;atfides.views&quot;} {:command &quot;(ns atfides.views\n  (:require [re-frame.core :as rf]\n            [reagent.core :as r]\n            [atfides.subs :as subs]\n            [cljsjs.material-ui]\n            [cljsjs-react-material-ui.core :refer [get-mui-theme color]]\n            [cljsjs-react-material-ui.reagent :as ui]\n            [cljsjs-react-material-ui.icons :as ic]))&quot;, :offset 335, :ns &quot;atfides.views&quot;} {:command &quot;(ns atfides.views\n  (:require [re-frame.core :as rf]\n            [reagent.core :as r]\n            [atfides.subs :as subs]\n            [cljsjs.material-ui]\n            [cljs-react-material-ui.core :refer [get-mui-theme color]]\n            [cljs-react-material-ui.reagent :as ui]\n            [cljs-react-material-ui.icons :as ic]\n            [reagent.core :as r]))&quot;, :offset 362, :ns &quot;atfides.views&quot;} {:command &quot;(defn home-page []\n  [ui/mui-theme-provider\n   {:mui-theme (get-mui-theme\n                 {:palette {:text-color (color :green600)}})}\n   [:div\n    [ui/app-bar {:title \&quot;Title\&quot;\n                 :icon-element-right\n                        (r/as-element [ui/icon-button\n                                       (ic/action-account-balance-wallet)])}]\n    [ui/paper\n     [:div \&quot;Hello\&quot;]\n     [ui/mui-theme-provider\n      {:mui-theme (get-mui-theme {:palette {:text-color (color :blue200)}})}\n      [ui/raised-button {:label \&quot;Blue button\&quot;}]]\n     (ic/action-home {:color (color :grey600)})\n     [ui/raised-button {:label        \&quot;Click me\&quot;\n                        :icon         (ic/social-group)\n                        :on-click     #(println \&quot;clicked\&quot;)}]]]])&quot;, :offset 751, :ns &quot;atfides.views&quot;} {:command &quot;(ns atfides.views\n  (:require [re-frame.core :as rf]\n            [cljsjs.material-ui]\n            [reagent.core :as r]\n            [atfides.subs :as subs]\n            [cljs-react-material-ui.core :refer [get-mui-theme color]]\n            [cljs-react-material-ui.reagent :as ui]\n            [cljs-react-material-ui.icons :as ic]\n            [reagent.core :as r]))&quot;, :offset 362, :ns &quot;atfides.views&quot;} {:command &quot;(defn main-panel []\n  [:h1 \&quot;Hello world\&quot;\n   (home-page)])&quot;, :offset 57, :ns &quot;atfides.views&quot;} {:command &quot;(p/sum (range 10))&quot;, :offset 18, :ns &quot;atfides.core&quot;} {:command &quot;(ns atfides.core\n  (:require\n    [clojure.string :as str]\n    [plumbing.core :as pl]\n    [clojure.java.io :as io]))&quot;, :offset 115, :ns &quot;atfides.core&quot;} {:command &quot;(pl/sum (range 10))&quot;, :offset 19, :ns &quot;atfides.core&quot;} {:command &quot;(def stats-graph\n  \&quot;A graph specifying the same computation as 'stats'\&quot;\n  {:n  (pl/fnk [xs]   (count xs))\n   :m  (pl/fnk [xs n] (/ (sum identity xs) n))\n   :m2 (pl/fnk [xs n] (/ (sum #(* % %) xs) n))\n   :v  (pl/fnk [m m2] (- m2 (* m m)))})&quot;, :offset 239, :ns &quot;atfides.core&quot;} {:command &quot;stats-graph&quot;, :offset 11, :ns &quot;atfides.core&quot;} {:command &quot;(stats-graph {:xs (range 10)})&quot;, :offset 30, :ns &quot;atfides.core&quot;} {:command &quot;{:xs (range 10)}&quot;, :offset 16, :ns &quot;atfides.core&quot;} {:command &quot;(pl/defnk s-fnk [a b c]\n  (+ a b c))&quot;, :offset 36, :ns &quot;atfides.core&quot;} {:command &quot;(s {:a 1 :b 3 :c 2})&quot;, :offset 20, :ns &quot;atfides.core&quot;} {:command &quot;(s-fnk {:a 1 :b 3 :c 2})&quot;, :offset 24, :ns &quot;atfides.core&quot;} {:command &quot;(pl/defnk s-fnk [a b c]\n  (pl/sum a b c))&quot;, :offset 41, :ns &quot;atfides.core&quot;} {:command &quot;(s-fnk {:a [1] :b [3]})&quot;, :offset 23, :ns &quot;atfides.core&quot;} {:command &quot;(def alphabet [:a :b :c :d])&quot;, :offset 28, :ns &quot;atfides.core&quot;} {:command &quot;(def ten (range 1 11))&quot;, :offset 22, :ns &quot;atfides.core&quot;} {:command &quot;(zip ten alphabet)&quot;, :offset 18, :ns &quot;atfides.core&quot;} {:command &quot;(zipmap ten alphabet)&quot;, :offset 21, :ns &quot;atfides.core&quot;} {:command &quot;(zipmap alphabet ten)&quot;, :offset 21, :ns &quot;atfides.core&quot;} {:command &quot;ten&quot;, :offset 3, :ns &quot;atfides.core&quot;} {:command &quot;(stats-graph)&quot;, :offset 13, :ns &quot;atfides.core&quot;} {:command &quot;(def al (zipmap alphabet ten))&quot;, :offset 30, :ns &quot;atfides.core&quot;} {:command &quot;(comp stats-graph al)&quot;, :offset 21, :ns &quot;atfides.core&quot;} {:command &quot;(apply stats-graph al)&quot;, :offset 22, :ns &quot;atfides.core&quot;} {:command &quot;(def stats-graph\n  \&quot;A graph specifying the same computation as 'stats'\&quot;\n  {:n  (pl/fnk [xs]   (count xs))\n   :m  (pl/fnk [xs n] (/ (pl/sum identity xs) n))\n   :m2 (pl/fnk [xs n] (/ (pl/sum #(* % %) xs) n))\n   :v  (pl/fnk [m m2] (- m2 (* m m)))})&quot;, :offset 245, :ns &quot;atfides.core&quot;} {:command &quot;(stats-graph :v al)&quot;, :offset 19, :ns &quot;atfides.core&quot;} {:command &quot;(stats-graph :v)&quot;, :offset 16, :ns &quot;atfides.core&quot;} {:command &quot;al&quot;, :offset 2, :ns &quot;atfides.core&quot;} {:command &quot;((stats-graph :v) al)&quot;, :offset 21, :ns &quot;atfides.core&quot;} {:command &quot;((stats-graph :n) al)&quot;, :offset 21, :ns &quot;atfides.core&quot;} {:command &quot;((stats-graph :n) {:xs (range 1 9)})&quot;, :offset 36, :ns &quot;atfides.core&quot;} {:command &quot;((stats-graph :v) {:xs (range 1 9)})&quot;, :offset 36, :ns &quot;atfides.core&quot;} {:command &quot;((stats-graph :m) {:xs (range 1 9)})&quot;, :offset 36, :ns &quot;atfides.core&quot;} {:command &quot;((stats-graph :m) {:xs (range 1 9)} 8)&quot;, :offset 38, :ns &quot;atfides.core&quot;} {:command &quot;((stats-graph :m 8) {:xs (range 1 9)} 8)&quot;, :offset 40, :ns &quot;atfides.core&quot;} {:command &quot;((stats-graph :m 8) {:xs (range 1 9)})&quot;, :offset 38, :ns &quot;atfides.core&quot;} {:command &quot;((stats-graph :n :m 8) {:xs (range 1 9)})&quot;, :offset 41, :ns &quot;atfides.core&quot;} {:command &quot;((stats-graph :n :m :m2 :v) {:xs (range 1 9)})&quot;, :offset 46, :ns &quot;atfides.core&quot;} {:command &quot;((stats-graph :n :m) {:xs (range 1 9)})&quot;, :offset 39, :ns &quot;atfides.core&quot;} {:command &quot;(/ 8 (pl/sum (range 1 9)))&quot;, :offset 26, :ns &quot;atfides.core&quot;} {:command &quot;(def ten (reverse (range 1 11)))&quot;, :offset 32, :ns &quot;atfides.core&quot;} {:command &quot;(/ (pl/sum ten (count ten)))&quot;, :offset 28, :ns &quot;atfides.core&quot;} {:command &quot;(/ (pl/sum ten) (count ten))&quot;, :offset 28, :ns &quot;atfides.core&quot;} {:command &quot;(unchecked-float (/ (pl/sum ten) (count ten)))&quot;, :offset 46, :ns &quot;atfides.core&quot;} {:command &quot;(float (/ (pl/sum ten) (count ten)))&quot;, :offset 36, :ns &quot;atfides.core&quot;}], :remote []}}</component>
+  <component name="ReplState" timestamp="1512281988084">{:repl-history {:ide [], :local [{:command &quot;(re-find #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; web-con)&quot;, :offset 58, :ns &quot;atfides.core&quot;} {:command &quot;(iterate (re-find #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; web-con))&quot;, :offset 68, :ns &quot;atfides.core&quot;} {:command &quot;(iterate #(re-find #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; %) web-con)&quot;, :offset 71, :ns &quot;atfides.core&quot;} {:command &quot;(iterate (map #(re-find #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; %) web-con))&quot;, :offset 77, :ns &quot;atfides.core&quot;} {:command &quot;(seq web-con)&quot;, :offset 13, :ns &quot;atfides.core&quot;} {:command &quot;(re-seq #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; web-con)&quot;, :offset 57, :ns &quot;atfides.core&quot;} {:command &quot;(-&gt; (re-seq #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; web-con)\n    second)&quot;, :offset 73, :ns &quot;atfides.core&quot;} {:command &quot;(-&gt; (re-seq #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; web-con)\n    (map second %))&quot;, :offset 81, :ns &quot;atfides.core&quot;} {:command &quot;(-&gt; (re-seq #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; web-con)\n    (map second ))&quot;, :offset 80, :ns &quot;atfides.core&quot;} {:command &quot;(map second (re-seq #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; web-con))&quot;, :offset 70, :ns &quot;atfides.core&quot;} {:command &quot;(defn get-all-links\n  \&quot;Gets all links from the requested page\&quot;\n  [dom-page]\n  (map second (re-seq #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; dom-page)))&quot;, :offset 150, :ns &quot;atfides.core&quot;} {:command &quot;(get-all-links web-con)&quot;, :offset 23, :ns &quot;atfides.core&quot;} {:command &quot;(defn pick-random-link\n  \&quot;Picks a random link out of all in the page\&quot;\n  [all-links]\n  (randnth all-links))&quot;, :offset 106, :ns &quot;atfides.core&quot;} {:command &quot;(rand-nth (get-all-links web-con))&quot;, :offset 34, :ns &quot;atfides.core&quot;} {:command &quot;(defn pick-random-link\n  \&quot;Picks a random link out of all in the page\&quot;\n  [all-links]\n  (rand-nth all-links))&quot;, :offset 107, :ns &quot;atfides.core&quot;} {:command &quot;(pick-random-link (get-all-links web-con))&quot;, :offset 42, :ns &quot;atfides.core&quot;} {:command &quot;(def web-con (slurp (io/resource \&quot;test.html\&quot;)))&quot;, :offset 47, :ns &quot;atfides.core&quot;} {:command &quot;(seq #\&quot; \&quot; web-con)&quot;, :offset 18, :ns &quot;atfides.core&quot;} {:command &quot;(prn web-con)&quot;, :offset 13, :ns &quot;atfides.core&quot;} {:command &quot;(def link \&quot;https://google.com\&quot;)&quot;, :offset 31, :ns &quot;atfides.core&quot;} {:command &quot;(loop []\n  (prn \&quot;&gt;&gt;&gt;&gt;&gt;&gt;\&quot;)\n  (do \n    (prn \&quot;something\&quot;)\n    (recur)))&quot;, :offset 68, :ns &quot;atfides.core&quot;} {:command &quot;(rand-int 5)&quot;, :offset 12, :ns &quot;atfides.core&quot;} {:command &quot;(ns atfides.core\n  (:require\n    [clojure.string :as str]\n    [clojure.java.shell :only [sh]]\n    [clojure.java.io :as io]\n    [clojure.java.shell :as sh]))&quot;, :offset 156, :ns &quot;atfides.core&quot;} {:command &quot;(sh/*sh-dir*)&quot;, :offset 13, :ns &quot;atfides.core&quot;} {:command &quot;(ns atfides.core\n  (:require\n    [clojure.string :as str]\n    [clojure.java.shell :only [sh]]\n    [clojure.java.io :as io]))&quot;, :offset 124, :ns &quot;atfides.core&quot;} {:command &quot;(sh \&quot;ls\&quot;)&quot;, :offset 9, :ns &quot;atfides.core&quot;} {:command &quot;(println (:out (sh \&quot;cat\&quot; \&quot;-\&quot; :in \&quot;Printing like ' \\\&quot; $@ &amp; \&quot;)))&quot;, :offset 62, :ns &quot;atfides.core&quot;} {:command &quot;(defn is-link\n  \&quot;Checks whether a string is a standard link\&quot;\n  [link]\n  (re-seq #\&quot;(?:href\\=\\\&quot;)(https?:\\/\\/[^\\\&quot;]+)(?:\\\&quot;)\&quot; link))&quot;, :offset 127, :ns &quot;atfides.core&quot;} {:command &quot;(println (:out (sh \&quot;ls\&quot; \&quot;-\&quot; :in \&quot;Printing like ' \\\&quot; $@ &amp; \&quot;)))&quot;, :offset 61, :ns &quot;atfides.core&quot;} {:command &quot;(clojure.java.shell/sh \&quot;echo 'sdf'\&quot;)&quot;, :offset 36, :ns &quot;atfides.core&quot;} {:command &quot;(clojure.java.shell/sh \&quot;cat 'sdf'\&quot;)&quot;, :offset 35, :ns &quot;atfides.core&quot;} {:command &quot;(clojure.java.shell/sh \&quot;cat 'sdf' \&quot;)&quot;, :offset 36, :ns &quot;atfides.core&quot;} {:command &quot;(clojure.java.shell/sh \&quot;ls\&quot;)&quot;, :offset 28, :ns &quot;atfides.core&quot;} {:command &quot;(io/resource \&quot;test.sh\&quot;)&quot;, :offset 23, :ns &quot;atfides.core&quot;} {:command &quot;(clojure.java.shell/sh scr)&quot;, :offset 27, :ns &quot;atfides.core&quot;} {:command &quot;(str \&quot;.\&quot; scr)&quot;, :offset 13, :ns &quot;atfides.core&quot;} {:command &quot;(clojure.java.shell/sh (str \&quot;.\&quot; scr))&quot;, :offset 37, :ns &quot;atfides.core&quot;} {:command &quot;(str \&quot;./\&quot; scr)&quot;, :offset 14, :ns &quot;atfides.core&quot;} {:command &quot;(clojure.java.shell/sh (str \&quot;./\&quot; scr))&quot;, :offset 38, :ns &quot;atfides.core&quot;} {:command &quot;(clojure.java.shell/sh (exec scr))&quot;, :offset 34, :ns &quot;atfides.core&quot;} {:command &quot;(def scr (io/resource \&quot;test.sh\&quot;))&quot;, :offset 33, :ns &quot;atfides.core&quot;} {:command &quot;(clojure.java.shell/sh (cat scr))&quot;, :offset 33, :ns &quot;atfides.core&quot;} {:command &quot;(defn ^:export init []\n  (re-frame/dispatch-sync [::events/initialise-db])\n  (dev-setup)\n  (mount-root))&quot;, :offset 104, :ns &quot;atfides.core&quot;} {:command &quot;(init)&quot;, :offset 6, :ns &quot;atfides.core&quot;} {:command &quot;(re-frame/dispatch-sync [::events/initialise-db])&quot;, :offset 49, :ns &quot;atfides.core&quot;} {:command &quot;(enable-console-print!)&quot;, :offset 23, :ns &quot;atfides.core&quot;} {:command &quot;(defn main-panel []\n  [:div\n    [:h1 \&quot;Hello world\&quot;]\n    (test-c)])&quot;, :offset 66, :ns &quot;atfides.views&quot;} {:command &quot;(ns atfides.views\n  (:require [re-frame.core :as rf]\n            [atfides.subs :as subs]\n            [cljsjs.material-ui]\n            [cljsjs.material-ui.core :as ui]\n            [cljsjs.material-ui.icons :as ic]))&quot;, :offset 214, :ns &quot;atfides.views&quot;} {:command &quot;(defn test-c []\n  (ui/mui-theme-provider\n    {:mui-theme (ui/get-mui-theme)}\n    (ui/paper \&quot;Hello World\&quot;)))&quot;, :offset 107, :ns &quot;atfides.views&quot;} {:command &quot;(test-c)&quot;, :offset 8, :ns &quot;atfides.views&quot;} {:command &quot;(defn main-panel []\n  [:h1 \&quot;Hello world\&quot;])&quot;, :offset 42, :ns &quot;atfides.views&quot;} {:command &quot;(ns atfides.views\n  (:require [re-frame.core :as rf]\n            [reagent.core :as r]\n            [atfides.subs :as subs]\n            [cljsjs.material-ui]\n            [cljsjs-react-material-ui.core :refer [get-mui-theme color]]\n            [cljsjs-react-material-ui.reagent :as ui]\n            [cljsjs-react-material-ui.icons :as ic]))&quot;, :offset 335, :ns &quot;atfides.views&quot;} {:command &quot;(ns atfides.views\n  (:require [re-frame.core :as rf]\n            [reagent.core :as r]\n            [atfides.subs :as subs]\n            [cljsjs.material-ui]\n            [cljs-react-material-ui.core :refer [get-mui-theme color]]\n            [cljs-react-material-ui.reagent :as ui]\n            [cljs-react-material-ui.icons :as ic]\n            [reagent.core :as r]))&quot;, :offset 362, :ns &quot;atfides.views&quot;} {:command &quot;(defn home-page []\n  [ui/mui-theme-provider\n   {:mui-theme (get-mui-theme\n                 {:palette {:text-color (color :green600)}})}\n   [:div\n    [ui/app-bar {:title \&quot;Title\&quot;\n                 :icon-element-right\n                        (r/as-element [ui/icon-button\n                                       (ic/action-account-balance-wallet)])}]\n    [ui/paper\n     [:div \&quot;Hello\&quot;]\n     [ui/mui-theme-provider\n      {:mui-theme (get-mui-theme {:palette {:text-color (color :blue200)}})}\n      [ui/raised-button {:label \&quot;Blue button\&quot;}]]\n     (ic/action-home {:color (color :grey600)})\n     [ui/raised-button {:label        \&quot;Click me\&quot;\n                        :icon         (ic/social-group)\n                        :on-click     #(println \&quot;clicked\&quot;)}]]]])&quot;, :offset 751, :ns &quot;atfides.views&quot;} {:command &quot;(ns atfides.views\n  (:require [re-frame.core :as rf]\n            [cljsjs.material-ui]\n            [reagent.core :as r]\n            [atfides.subs :as subs]\n            [cljs-react-material-ui.core :refer [get-mui-theme color]]\n            [cljs-react-material-ui.reagent :as ui]\n            [cljs-react-material-ui.icons :as ic]\n            [reagent.core :as r]))&quot;, :offset 362, :ns &quot;atfides.views&quot;} {:command &quot;(defn main-panel []\n  [:h1 \&quot;Hello world\&quot;\n   (home-page)])&quot;, :offset 57, :ns &quot;atfides.views&quot;} {:command &quot;(p/sum (range 10))&quot;, :offset 18, :ns &quot;atfides.core&quot;} {:command &quot;(ns atfides.core\n  (:require\n    [clojure.string :as str]\n    [plumbing.core :as pl]\n    [clojure.java.io :as io]))&quot;, :offset 115, :ns &quot;atfides.core&quot;} {:command &quot;(pl/sum (range 10))&quot;, :offset 19, :ns &quot;atfides.core&quot;} {:command &quot;(def stats-graph\n  \&quot;A graph specifying the same computation as 'stats'\&quot;\n  {:n  (pl/fnk [xs]   (count xs))\n   :m  (pl/fnk [xs n] (/ (sum identity xs) n))\n   :m2 (pl/fnk [xs n] (/ (sum #(* % %) xs) n))\n   :v  (pl/fnk [m m2] (- m2 (* m m)))})&quot;, :offset 239, :ns &quot;atfides.core&quot;} {:command &quot;stats-graph&quot;, :offset 11, :ns &quot;atfides.core&quot;} {:command &quot;(stats-graph {:xs (range 10)})&quot;, :offset 30, :ns &quot;atfides.core&quot;} {:command &quot;{:xs (range 10)}&quot;, :offset 16, :ns &quot;atfides.core&quot;} {:command &quot;(pl/defnk s-fnk [a b c]\n  (+ a b c))&quot;, :offset 36, :ns &quot;atfides.core&quot;} {:command &quot;(s {:a 1 :b 3 :c 2})&quot;, :offset 20, :ns &quot;atfides.core&quot;} {:command &quot;(s-fnk {:a 1 :b 3 :c 2})&quot;, :offset 24, :ns &quot;atfides.core&quot;} {:command &quot;(pl/defnk s-fnk [a b c]\n  (pl/sum a b c))&quot;, :offset 41, :ns &quot;atfides.core&quot;} {:command &quot;(s-fnk {:a [1] :b [3]})&quot;, :offset 23, :ns &quot;atfides.core&quot;} {:command &quot;(def alphabet [:a :b :c :d])&quot;, :offset 28, :ns &quot;atfides.core&quot;} {:command &quot;(def ten (range 1 11))&quot;, :offset 22, :ns &quot;atfides.core&quot;} {:command &quot;(zip ten alphabet)&quot;, :offset 18, :ns &quot;atfides.core&quot;} {:command &quot;(zipmap ten alphabet)&quot;, :offset 21, :ns &quot;atfides.core&quot;} {:command &quot;(zipmap alphabet ten)&quot;, :offset 21, :ns &quot;atfides.core&quot;} {:command &quot;ten&quot;, :offset 3, :ns &quot;atfides.core&quot;} {:command &quot;(stats-graph)&quot;, :offset 13, :ns &quot;atfides.core&quot;} {:command &quot;(def al (zipmap alphabet ten))&quot;, :offset 30, :ns &quot;atfides.core&quot;} {:command &quot;(comp stats-graph al)&quot;, :offset 21, :ns &quot;atfides.core&quot;} {:command &quot;(apply stats-graph al)&quot;, :offset 22, :ns &quot;atfides.core&quot;} {:command &quot;(def stats-graph\n  \&quot;A graph specifying the same computation as 'stats'\&quot;\n  {:n  (pl/fnk [xs]   (count xs))\n   :m  (pl/fnk [xs n] (/ (pl/sum identity xs) n))\n   :m2 (pl/fnk [xs n] (/ (pl/sum #(* % %) xs) n))\n   :v  (pl/fnk [m m2] (- m2 (* m m)))})&quot;, :offset 245, :ns &quot;atfides.core&quot;} {:command &quot;(stats-graph :v al)&quot;, :offset 19, :ns &quot;atfides.core&quot;} {:command &quot;(stats-graph :v)&quot;, :offset 16, :ns &quot;atfides.core&quot;} {:command &quot;al&quot;, :offset 2, :ns &quot;atfides.core&quot;} {:command &quot;((stats-graph :v) al)&quot;, :offset 21, :ns &quot;atfides.core&quot;} {:command &quot;((stats-graph :n) al)&quot;, :offset 21, :ns &quot;atfides.core&quot;} {:command &quot;((stats-graph :n) {:xs (range 1 9)})&quot;, :offset 36, :ns &quot;atfides.core&quot;} {:command &quot;((stats-graph :v) {:xs (range 1 9)})&quot;, :offset 36, :ns &quot;atfides.core&quot;} {:command &quot;((stats-graph :m) {:xs (range 1 9)})&quot;, :offset 36, :ns &quot;atfides.core&quot;} {:command &quot;((stats-graph :m) {:xs (range 1 9)} 8)&quot;, :offset 38, :ns &quot;atfides.core&quot;} {:command &quot;((stats-graph :m 8) {:xs (range 1 9)} 8)&quot;, :offset 40, :ns &quot;atfides.core&quot;} {:command &quot;((stats-graph :m 8) {:xs (range 1 9)})&quot;, :offset 38, :ns &quot;atfides.core&quot;} {:command &quot;((stats-graph :n :m 8) {:xs (range 1 9)})&quot;, :offset 41, :ns &quot;atfides.core&quot;} {:command &quot;((stats-graph :n :m :m2 :v) {:xs (range 1 9)})&quot;, :offset 46, :ns &quot;atfides.core&quot;} {:command &quot;((stats-graph :n :m) {:xs (range 1 9)})&quot;, :offset 39, :ns &quot;atfides.core&quot;} {:command &quot;(/ 8 (pl/sum (range 1 9)))&quot;, :offset 26, :ns &quot;atfides.core&quot;} {:command &quot;(def ten (reverse (range 1 11)))&quot;, :offset 32, :ns &quot;atfides.core&quot;} {:command &quot;(/ (pl/sum ten (count ten)))&quot;, :offset 28, :ns &quot;atfides.core&quot;} {:command &quot;(/ (pl/sum ten) (count ten))&quot;, :offset 28, :ns &quot;atfides.core&quot;} {:command &quot;(unchecked-float (/ (pl/sum ten) (count ten)))&quot;, :offset 46, :ns &quot;atfides.core&quot;} {:command &quot;(float (/ (pl/sum ten) (count ten)))&quot;, :offset 36, :ns &quot;atfides.core&quot;} {:command &quot;@default-db&quot;, :offset 11, :ns &quot;cljs.user&quot;} {:command &quot;(:pub-keys @defaul t-db)&quot;, :offset 24, :ns &quot;cljs.user&quot;}], :remote []}}</component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -312,7 +352,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41328126" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27734375" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.006666667" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -379,13 +419,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/cljs/atfides/views.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/cljs/atfides/core.cljs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="11" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
           <folding>
-            <marker date="1512094553000" expanded="true" signature="0:323" ph="(ns atfides.core ...)" />
-            <marker date="1512094553000" expanded="true" signature="676:732" ph="(defn mount-root ...)" />
+            <marker date="1512281673000" expanded="true" signature="0:340" ph="(ns atfides.core ...)" />
+            <marker date="1512281673000" expanded="true" signature="693:749" ph="(defn mount-root ...)" />
           </folding>
         </state>
       </provider>
@@ -403,8 +451,8 @@
         <state relative-caret-position="120">
           <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
           <folding>
-            <marker date="1512094553000" expanded="true" signature="0:323" ph="(ns atfides.core ...)" />
-            <marker date="1512094553000" expanded="true" signature="676:732" ph="(defn mount-root ...)" />
+            <marker date="1512281673000" expanded="true" signature="0:340" ph="(ns atfides.core ...)" />
+            <marker date="1512281673000" expanded="true" signature="693:749" ph="(defn mount-root ...)" />
           </folding>
         </state>
       </provider>
@@ -507,8 +555,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1512094553000" expanded="true" signature="0:323" ph="(ns atfides.core ...)" />
-            <marker date="1512094553000" expanded="true" signature="676:732" ph="(defn mount-root ...)" />
+            <marker date="1512281673000" expanded="true" signature="0:340" ph="(ns atfides.core ...)" />
+            <marker date="1512281673000" expanded="true" signature="693:749" ph="(defn mount-root ...)" />
           </folding>
         </state>
       </provider>
@@ -557,27 +605,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cljs/atfides/subs.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cljs/atfides/events.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cljs/atfides/db.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -585,38 +612,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cljs/atfides/core.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="11" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-          <folding>
-            <marker date="1512094553000" expanded="true" signature="0:323" ph="(ns atfides.core ...)" />
-            <marker date="1512094553000" expanded="true" signature="676:732" ph="(defn mount-root ...)" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/clj/atfides/core.clj">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="29" lean-forward="false" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cljs/atfides/db.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project.clj">
+    <entry file="file://$PROJECT_DIR$/src/cljs/atfides/events.cljs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        <state relative-caret-position="690">
+          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cljs/atfides/subs.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cljs/atfides/views.cljs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="3" lean-forward="false" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
+        <state relative-caret-position="405">
+          <caret line="42" column="38" lean-forward="false" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cljs/atfides/core.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+          <folding>
+            <marker date="1512281673000" expanded="true" signature="0:340" ph="(ns atfides.core ...)" />
+            <marker date="1512281673000" expanded="true" signature="693:749" ph="(defn mount-root ...)" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -10,7 +10,7 @@
 
 
 (defn target-value
-  "updates value in form text field"
+  "updates value from event in form text field"
   [e]
   (aget e "target" "value"))
 
@@ -21,7 +21,7 @@
                  {:palette {:text-color (color :green600)}})}
 
    [:div
-    [ui/app-bar {:title "Total: $0"
+    [ui/app-bar {:title "Total Hodlings: $0"
                  :icon-element-right
                         (r/as-element [ui/icon-button
                                        (ic/action-account-balance-wallet)])}]
@@ -33,12 +33,14 @@
                     ;; :expand nil
                     ;; :style to->path
                     :min 20 ;; check minimum public addr length
-                    :on-change #(target-value %)}]
-
+                    ;; :value @(rf/subscribe [:]) <- not needed
+                    ;; :on-change #(rf/dispatch [:add-pub-key (target-value %)])
+                    :on-change #(reset! (target-value %))}]
+    [:br]
     [ui/raised-button {:label "Enter"
-                       :primary true
-                       :padding-left 30
-                       :margin-left 30}]]])
+                       :secondary true}]]])
+                       ;; :padding-left 30
+                       ;; :margin-left 30}]]])
 
                        ;; :href (u/path-for :skills-create)}]]])
 

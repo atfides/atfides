@@ -1,10 +1,11 @@
 (ns atfides.core
-  (:require [reagent.core :as reagent]
+  (:require [goog.events :as events]
+            [reagent.core :as reagent]
             [re-frame.core :as re-frame]
             [devtools.core :as devtools]
             [atfides.db :as db]
-            [atfides.events :as events]
-            [atfides.subs :as subs]
+            [atfides.events]
+            [atfides.subs]
             [atfides.views :as views]
             [atfides.config :as config]
             [cljsjs.material-ui]))

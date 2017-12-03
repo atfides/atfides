@@ -11,22 +11,13 @@
 
 ;; -- Layer 2 -------------------------------------
 ;; -- accessor
+;; usage (subscribe [:local-pub-keys])
 (rf/reg-sub
- ::pub-keys
+ :local-pub-keys
  (fn [db _]
-   (:pub-keys db)))
+   (:local-pub-keys db)))
 
 
-;; -- later: move to utils
-(defn get-pub-keys
-  "Read the current pub-keys from global app state "
-  [db]
-  (:pub-keys db))
-
-
-;; -- registration
-;; usage (subscribe [:pub-keys])
-(rf/reg-sub get-pub-keys)
 
 
 ;; -- Layer 3 --------------------------------------
