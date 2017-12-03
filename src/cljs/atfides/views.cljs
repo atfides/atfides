@@ -35,7 +35,7 @@
                     :min 20 ;; check minimum public addr length
                     ;; :value @(rf/subscribe [:]) <- not needed
                     ;; :on-change #(rf/dispatch [:add-pub-key (target-value %)])
-                    :on-change #(reset! (target-value %))}]
+                    :on-change #(target-value %)}]
     [:br]
     [ui/raised-button {:label "Enter"
                        :secondary true}]]])
@@ -43,9 +43,6 @@
                        ;; :margin-left 30}]]])
 
                        ;; :href (u/path-for :skills-create)}]]])
-
-
-
 
 
 (defn main-panel []
