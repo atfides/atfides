@@ -37,8 +37,9 @@
 (defn pub-key-entry
   []
   [pub-key-input
-   {:id "new-pub-key"
-    :floating-label-text "Enter a new public address..."
+   {:id "new-pub-addr"
+    :floating-label-text "Paste a new public address, then hit Enter..."
+    :full-width true
     :on-save #(rf/dispatch [:add-pub-key %])}])
 
 (defn home-page []
@@ -53,13 +54,8 @@
                         (r/as-element [ui/icon-button
                                        (ic/action-account-balance-wallet)])}]
 
-    [pub-key-entry]
-    [:br]
-    [ui/raised-button {:label "Enter"
-                       :secondary true
-                       :on-click #(rf/dispatch [:add-pub-key %])}]]])
-                       ;; :padding-left 30
-                       ;; :margin-left 30}]]])
+    [pub-key-entry]]])
+
 
 
 (defn main-panel []
