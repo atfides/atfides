@@ -21,7 +21,10 @@
         stop #(do (reset! val "")
                   (when on-stop (on-stop)))
         save #(let [v (-> @val str str/trim)]
-                (when (seq v) (on-save v)))]
+                (when (seq v)
+                  (on-save v)
+                  (stop)))]
+                  ;; (reset! val "")))]
     (fn [props]
       [ui/text-field (merge props
                             {:type :type
