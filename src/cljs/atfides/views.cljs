@@ -24,7 +24,7 @@
                 (when (seq v)
                   (on-save v)
                   (stop)))]
-                  ;; (reset! val "")))]
+
     (fn [props]
       [ui/text-field (merge props
                             {:type :type
@@ -45,6 +45,26 @@
     :full-width true
     :on-save #(rf/dispatch [:add-pub-key %])}])
 
+
+(defn pub-addr-list
+  []
+  (let [local-keys-map @(rf/subscribe [:local-pub-keys])
+        pub-keys (set (flatten (vals local-keys-map)))]
+
+    ;; taking advantage of clojure sets > always unique
+    [:section#main
+      [:ul#pub-addr
+        (for [key pub-keys]
+          ^{:key key} [pub-addr-item key])]]))
+
+
+;; keeping dumb simple for now
+(defn pub-addr-item
+  [pub-addr]
+  [:li
+   [:div.view
+     [:label pub-addr]]])
+
 (defn home-page []
   [ui/mui-theme-provider
    {:mui-theme (get-mui-theme
@@ -57,7 +77,12 @@
                         (r/as-element [ui/icon-button
                                        (ic/action-account-balance-wallet)])}]
 
-    [pub-key-entry]]])
+    [pub-key-entry]
+    [:br]
+
+    [pub-addr-list]
+
+    [:br]]])
 
 
 
