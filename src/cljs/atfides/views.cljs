@@ -15,8 +15,9 @@
   [e]
   (aget e "target" "value"))
 
-(defn pub-key-input [{:keys [title on-save on-stop]}]
-  (let [val (r/atom title)
+;; copied pattern from re-frame mvc example
+(defn pub-key-input [{:keys [pub-addr on-save on-stop]}]
+  (let [val (r/atom pub-addr)
         stop #(do (reset! val "")
                   (when on-stop (on-stop)))
         save #(let [v (-> @val str str/trim)]
@@ -25,6 +26,7 @@
       [ui/text-field (merge props
                             {:type :type
                              :value @val
+                             :auto-focus true
                              :on-blur save
                              :on-change #(reset! val (-> % .-target .-value))
                              :on-key-down #(case (.-which %)
