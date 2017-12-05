@@ -41,7 +41,7 @@
 
  ;; the event handler being registered
  (fn [{:keys [local-pub-keys]} _]
-   (assoc db/default-db :local-pub-keys local-pub-keys)))
+   {:db (assoc db/default-db :local-pub-keys local-pub-keys)}))
 
 
 ;; usage: > (dispatch [:add-pub-key])
@@ -54,9 +54,9 @@
 
   ;; alt {:id id :pub-key pub-key}
   ;; db example: Think harder about the data structure.
-  (fn [pub-keys pub-key]                     ;; because of trim-v the 2nd parameter is not [_ text]
+  (fn [pub-keys [pub-key]]                     ;; because of trim-v the 2nd parameter is not [_ text]
     (let [id (allocate-next-id pub-keys)]
-      (assoc pub-keys id pub-key))))
+      (assoc pub-keys id {:id id :pub-addr pub-key}))))
 
 
 (rf/reg-event-db
@@ -65,5 +65,5 @@
   ;; looks after deleting a pub-key from local store
   pub-keys-interceptors
 
-  (fn [pub-keys id]
+  (fn [pub-keys [id]]
     (dissoc pub-keys id)))
