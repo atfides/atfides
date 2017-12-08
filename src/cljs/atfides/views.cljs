@@ -9,13 +9,11 @@
             [cljs-react-material-ui.icons :as ic]
             [reagent.core :as r]))
 
-
 (defn target-value
   "updates value from event in form text field"
   [e]
   (aget e "target" "value"))
 
-;; copied pattern from re-frame mvc example
 (defn pub-key-input [{:keys [pub-addr on-save on-stop]}]
   (let [val (r/atom pub-addr)
         stop #(do (reset! val "")
@@ -24,7 +22,6 @@
                 (when (seq v)
                   (on-save v)
                   (stop)))]
-
     (fn [props]
       [ui/text-field (merge props
                             {:type :type
@@ -46,24 +43,23 @@
     :on-save #(rf/dispatch [:add-pub-key %])}])
 
 
+(defn pub-addr-item
+  []
+  (let [editing (r/atom false)]
+    (fn [{:keys [id pub-addr]}]
+      [:li
+       [:div.view
+        [:label pub-addr]]])))
+
+
 (defn pub-addr-list
   []
-  (let [local-keys-map @(rf/subscribe [:local-pub-keys])
-        pub-keys (set (flatten (vals local-keys-map)))]
-
-    ;; taking advantage of clojure sets > always unique
+  (let [local-keys-map (vals @(rf/subscribe [:local-pub-keys]))]
     [:section#main
       [:ul#pub-addr
-        (for [key pub-keys]
-          ^{:key key} [pub-addr-item key])]]))
+        (for [addr local-keys-map]
+          ^{:key (:id addr)} [pub-addr-item addr])]]))
 
-
-;; keeping dumb simple for now
-(defn pub-addr-item
-  [pub-addr]
-  [:li
-   [:div.view
-     [:label pub-addr]]])
 
 (defn home-page []
   [ui/mui-theme-provider
