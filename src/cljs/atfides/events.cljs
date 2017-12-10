@@ -1,6 +1,8 @@
 (ns atfides.events
   (:require [re-frame.core :as rf]
-            [atfides.db :as db]))
+            [atfides.db :as db]
+            [ajax.core :as ajax]
+            [day8.re-frame.http-fx]))
 
 ;; -- Storing pub-keys to localStore --------
 ;; -- Runs after the event handler :add-pub-key
@@ -67,3 +69,38 @@
 
   (fn [pub-keys [id]]
     (dissoc pub-keys id)))
+
+;; -- Talking to other services (only get requests)
+;;
+;; Due to availabilty issues and other uncertainties
+;; We save the latest get request data to LS (local storage)
+;; * (maybe) trigger updates every 5 minutes
+;; * for responsiveness (we serve stale data then update when data lands)
+
+(rf/reg-event-fx
+  :request-address-data
+  (fn [{db :db} _]
+    ;; returning a map of side effectsa
+    {:http-xhrio {:method         :get
+                  ;; https://www.blockcypher.com/dev/bitcoin/#address-balance-endpoint
+                  :uri            #(str "https://api.blockcypher.com/v1/btc/main/addrs/" % "/balance")
+                  :response-format (ajax/json-request-format) ;; {:keywords? true}
+                  :on-success [:address-data-loaded]
+                  :on-failure [:failed-get-request]}
+     :db (assoc db :loading? true)}))
+
+(rf/reg-event-fx
+  :address-data-loaded
+  pub-keys-interceptors
+  (fn [db _]
+    (println "Address data loaded......")))
+    ;; (assoc-in db [_ _])))
+
+
+(rf/reg-event-fx
+  :failed-get-request
+  ;; needed?
+  pub-keys-interceptors
+  (fn [_ _]
+    (println "Failed GET request")))
+

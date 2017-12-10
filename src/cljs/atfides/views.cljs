@@ -4,15 +4,12 @@
             [cljsjs.material-ui]
             [reagent.core :as r]
             [atfides.subs :as subs]
+            [atfides.utils :as utils]
             [cljs-react-material-ui.core :refer [get-mui-theme color]]
             [cljs-react-material-ui.reagent :as ui]
             [cljs-react-material-ui.icons :as ic]
             [reagent.core :as r]))
 
-(defn target-value
-  "updates value from event in form text field"
-  [e]
-  (aget e "target" "value"))
 
 (defn pub-key-input [{:keys [pub-addr on-save on-stop]}]
   (let [val (r/atom pub-addr)
@@ -56,9 +53,15 @@
   []
   (let [local-keys-map (vals @(rf/subscribe [:local-pub-keys]))]
     [:section#main
-      [:ul#pub-addr
+     [:h3 "Saved addresses: "]
+     [:ul#pub-addr
         (for [addr local-keys-map]
-          ^{:key (:id addr)} [pub-addr-item addr])]]))
+          ^{:key (:id addr)} [pub-addr-item addr])]
+
+     ;; For testing purposes
+     [:h3 "Test addresses"]
+     (utils/test-addresses)]))
+
 
 
 (defn home-page []
@@ -86,12 +89,3 @@
   [:div [:h2 "Test First Component"]
         (home-page)])
 
-
-(defn main-panel-test []
-  (let [name @(rf/subscribe [::subs/pub-keys])]
-    [:div.greeting
-     "Hell from "
-     [:input {:type "text"
-              :value #(rf/subscribe [:pub-keys])
-              :on-change #(rf/dispatch [:pub-keys]
-                                       (-> % .-target .-value))}]]))
