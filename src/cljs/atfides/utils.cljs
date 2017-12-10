@@ -12,3 +12,7 @@
    [:li "1H6ZZpRmMnrw8ytepV3BYwMjYYnEkWDqVP"]
    [:li "378j15cCNW1MsTxzxegZ2dFRQZbb4SGP8Y"]
    [:li "3MdMWGJP4aGVezF1eqjGpbMMwQuwoXfeXG"]])
+
+(defn satoshi->btc
+  [satoshi]
+  (/ satoshi (* 100 1000 1000)))

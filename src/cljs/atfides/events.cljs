@@ -72,7 +72,7 @@
 
 ;; -- Talking to other services (only get requests)
 ;;
-;; Due to availabilty issues and other uncertainties
+;; Due to availability issues and other uncertainties
 ;; We save the latest get request data to LS (local storage)
 ;; * (maybe) trigger updates every 5 minutes
 ;; * for responsiveness (we serve stale data then update when data lands)
