@@ -37,7 +37,9 @@
    {:id "new-pub-addr"
     :floating-label-text "Paste a new public address, then hit Enter..."
     :full-width true
-    :on-save #(rf/dispatch [:add-pub-key %])}])
+    :on-save #(do
+                (rf/dispatch [:add-pub-key %])
+                (rf/dispatch [:request-address-data %]))}])
 
 
 (defn pub-addr-item

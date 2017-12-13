@@ -32,9 +32,7 @@
 ;; initialise-db | add-pub-key | delete-pub-key
 
 
-;; usage: > (dispatch [:initialise-db])
 ;; fetch related data if pre-existing pub-keys
-
 (rf/reg-event-db
  :initialise-db
 
@@ -77,30 +75,40 @@
 ;; * (maybe) trigger updates every 5 minutes
 ;; * for responsiveness (we serve stale data then update when data lands)
 
+
+;; -- Debugging notes
+;; 1st arg: {:event [:request-address-data %], :db {:local-pub-keys {1 {:id 1, :pub-addr %}}}}
+;; 2nd arg: [:request-address-data %] | (:event 1st)
 (rf/reg-event-fx
   :request-address-data
-  (fn [{db :db} _]
+
+  (fn [_ [_ addr]]
     ;; returning a map of side effectsa
+    (println "Kicked request")
+    (println "addr: " addr)
+
     {:http-xhrio {:method         :get
                   ;; https://www.blockcypher.com/dev/bitcoin/#address-balance-endpoint
-                  :uri            #(str "https://api.blockcypher.com/v1/btc/main/addrs/" % "/balance")
-                  :response-format (ajax/json-request-format) ;; {:keywords? true}
-                  :on-success [:address-data-loaded]
-                  :on-failure [:failed-get-request]}
-     :db (assoc db :loading? true)}))
+                  :uri (str "https://api.blockcypher.com/v1/btc/main/addrs/" (name addr) "/balance")
+                  :response-format (ajax/json-request-format)
+                  ;; :on-failure [:failed-get-request]
+                  :on-success [:address-data-loaded]}}))
 
 (rf/reg-event-fx
   :address-data-loaded
-  pub-keys-interceptors
-  (fn [db _]
-    (println "Address data loaded......")))
-    ;; (assoc-in db [_ _])))
+
+  (fn [db item2 item3]
+    (println "Address data loaded......XXXXXX...")
+    (println "Time to insert smth")
+    (println "Item 2: " item2)
+    (println "Item 3: " item3)
+    (println "db: " db)))
 
 
 (rf/reg-event-fx
   :failed-get-request
-  ;; needed?
-  pub-keys-interceptors
-  (fn [_ _]
-    (println "Failed GET request")))
 
+  (fn [item1 item2]
+    (println "Item 1: " item1)
+    (println "Item 2: " item2)
+    (println "Failed GET request")))
