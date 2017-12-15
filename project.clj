@@ -7,6 +7,7 @@
                  [reagent "0.7.0"]
                  ;; [cljsjs/c3 "0.4.14-0"]
                  ;; [chartkick "0.1.0"]
+                 [print-foo-cljs "2.0.3"]
                  [day8.re-frame/http-fx "0.1.4"]
                  [cljs-ajax "0.7.2"]
                  [cljs-react-material-ui "0.2.50"]

@@ -1,4 +1,5 @@
-(ns atfides.utils)
+(ns atfides.utils
+  (:require [print.foo :as pf :include-macros true]))
 
 (defn target-value
   "updates value from event in form text field"

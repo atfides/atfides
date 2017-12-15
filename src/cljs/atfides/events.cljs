@@ -83,7 +83,7 @@
   :request-address-data
 
   (fn [_ [_ addr]]
-    ;; returning a map of side effectsa
+    ;; returning a map of side effects
     (println "Kicked request")
     (println "addr: " addr)
 
