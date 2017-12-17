@@ -8,7 +8,46 @@
             [cljs-react-material-ui.core :refer [get-mui-theme color]]
             [cljs-react-material-ui.reagent :as ui]
             [cljs-react-material-ui.icons :as ic]
+            [rid3.core :as rid3]
+            [atfides.graphs.utils :as gutils]
             [reagent.core :as r]))
+
+(def example (r/atom [4 5 5 6 8 9]))
+
+(defn viz [ratom]
+  [rid3/viz
+   {:id    "some-id"
+    :ratom ratom
+    :svg   {:did-mount (fn [node _]
+                         (-> node
+                             (.attr "width" 200)
+                             (.attr "height" 200)
+                             (.style "border" "solid 1px grey")))}
+    :pieces
+           [{:kind      :elem
+             :class     "background"
+             :tag       "circle"
+             :did-mount (fn [node _]
+                          (-> node
+                              (.attr "cx" 100)
+                              (.attr "cy" 100)
+                              (.attr "r" 50)
+                              (.attr "fill" "grey")))}
+            ;; ATTENTION \/
+            {:kind      :elem
+             :class     "foreground"
+             :tag       "text"
+             :did-mount (fn [node _]
+                          (-> node
+                              (.attr "x" 100)
+                              (.attr "y" 100)
+                              (.attr "text-anchor" "middle")
+                              (.attr "alignment-baseline" "middle")
+                              (.attr "fill" "green")
+                              (.attr "font-size" "24px")
+                              (.attr "font-family" "sans-serif")
+                              (.text "RID3")))}]}])
+
 
 
 (defn pub-key-input [{:keys [pub-addr on-save on-stop]}]
@@ -60,6 +99,12 @@
         (for [addr local-keys-map]
           ^{:key (:id addr)} [pub-addr-item addr])]
 
+     ;; [:h3 "In place example"]
+     ;; (viz example)
+
+     [:h3 "From G-utils"]
+     (gutils/pie-chart gutils/example-ratom)
+
      ;; For testing purposes
      [:h3 "Test addresses"]
      (utils/test-addresses)]))
@@ -82,6 +127,8 @@
     [:br]
 
     [pub-addr-list]
+
+    [:br]
 
     [:br]]])
 
