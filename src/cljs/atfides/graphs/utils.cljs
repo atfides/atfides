@@ -1,34 +1,56 @@
 (ns atfides.graphs.utils
   (:require [rid3.core :as rid3]
+            ;; [rid3.pie :as pie-charter]
             [reagent.core :as r]))
 
-;; -- Common Helpers -----------------------
-;; -----------------------------------------
+
+(defn title [label file-name]
+  [:div
+   [:h3
+    {:style {:font-family "sans-serif"
+             :font-weight "300"
+             :margin      0}}
+    label]
+   [:h4
+    {:style {:font-family "sans-serif"
+             :margin-top  0}}
+    [:a {:href (str "https://github.com/gadfly361/rid3/blob/master/src/demo/rid3/"
+                    file-name
+                    ".cljs")}
+     "source"]]])
+
+
+(defn btn-randomize-data [ratom randomize-fn]
+  [:div
+   [:button
+    {:on-click #(randomize-fn ratom)}
+    "Randomize data"]])
+
+;; Example from:
+;; https://bl.ocks.org/mbostock/3887235
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; util
+
 (defn get-width [ratom]
-  ;; 300 <- x -> 500
   (let [page-width (get @ratom :page-width)]
-    (max
-      (min 500
-           (- page-width 100))
-      300)))
+    (max (min 500
+              (- page-width 100))
+         300)))
 
 (defn get-height [ratom]
-  ;; square x == width
   (let [width (get-width ratom)]
     width))
 
-
-;; -- Pie Chart Helpers ---------------------
-;; ------------------------------------------
 (defn get-radius [ratom]
   (let [width (get-width ratom)]
-     (/ width 2)))
+    (/ width 2)))
 
 (def pie
   (-> js/d3
       .pie
       (.value (fn [d]
-                (aget d "balance")))
+                (aget d "population")))
       (.sort nil)))
 
 (defn prepare-dataset [ratom]
@@ -46,43 +68,40 @@
   (let [radius (get-radius ratom)]
     (-> js/d3
         .arc
-        (.outerRadius (- radius 50))
-        (.innerRadius (- radius 50)))))
+        (.outerRadius (- radius 40))
+        (.innerRadius (- radius 40)))))
 
-(def colors
+(def color
   (-> js/d3
       (.scaleOrdinal #js ["#98abc5" "#8a89a6" "#7b6888" "#6b486b" "#a05d56" "#d0743c" "#ff8c00"])))
 
 
-;; -- DOM elements --------------------------
-;; ------------------------------------------
-(defn pie-svg [node ratom]
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; elements
+
+(defn svg [node ratom]
   (let [width (get-width ratom)
         height (get-height ratom)]
-
     (-> node
         (.attr "width" width)
         (.attr "height" height))))
 
-(defn pie-container [node ratom]
-   (let [width (get-width ratom)
-         height (get-height ratom)
-         half-width (/ width 2)
-         half-height (/ height 2)]
-
+(defn main-container [node ratom]
+  (let [width  (get-width ratom)
+        height (get-height ratom)]
     (-> node
         (.attr "transform" (str "translate("
-                                half-width
+                                (/ width 2)
                                 ","
-                                half-height
-                                ")")))))
+                                (/ height 2) ")")))))
 
 (defn arc [node ratom]
   (let [path (create-path ratom)]
     (-> node
         (.attr "d" path)
         (.attr "fill" (fn [d]
-                        (colors (aget d "data" "balance"))))
+                        (color (aget d "data" "age"))))
         (.style "stroke" "#FFF"))))
 
 (defn text-label [node ratom]
@@ -93,35 +112,58 @@
         (.attr "dy" "0.35em")
         (.text (fn [d]
                  (aget d "data" "age")))
+
         (.style "font" "10px sans-serif")
         (.style "text-anchor" "middle"))))
 
 
-;; -- Components   --------------------------
-;; ------------------------------------------
-(defn pie-chart [ratom]
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; viz
+
+(defn viz [ratom]
   [rid3/viz
-   {:id             "piechart"
-    :ratom          ratom
-    :svg            {:did-mount pie-svg} ;; pie-svg
-    :pie-container  {:did-mount pie-container}}]) ;; pie-container
-    ;; :pieces [{:kind         :elem-with-data :class        "arc" :tag          "path" :did-mount    arc :prepare-dataset prepare-dataset}]}])
-    ;; {:kind :elem-with-data
-    ;;  :class "text-label"
-    ;;  :tag "text"
-    ;;  :did-mount text-label}]}])
-      ;; :prepare-dataset prepare-dataset}]}])
+   {:id              "piechart"
+    :ratom           ratom
+    :svg             {:did-mount svg}
+    :main-container  {:did-mount main-container}
+    :pieces
+                     [{:kind      :elem-with-data
+                       :class     "arc"
+                       :tag       "path"
+                       :did-mount arc
+                       :prepare-dataset prepare-dataset}
+                      {:kind      :elem-with-data
+                       :class     "text-label"
+                       :tag       "text"
+                       :did-mount text-label
+                       :prepare-dataset prepare-dataset}]}])
 
 
-;; -- Temporary static data   ---------------
-;; ------------------------------------------
-(def static-data
-  [{:address "1andreas3batLhQa2FawWjeyjCqyBzypd" :balance 5000}
-   {:address "1H6ZZpRmMnrw8ytepV3BYwMjYYnEkWDqVP" :balance 2000}
-   {:address "1NZ4J7qUMmvgRJ5RdipLqREwo8ZZEmuxcb" :balance 8000}
-   {:address "378j15cCNW1MsTxzxegZ2dFRQZbb4SGP8Y" :balance 3000}
-   {:address "3MdMWGJP4aGVezF1eqjGpbMMwQuwoXfeXG" :balance 10000}])
 
-(def example-ratom (r/atom static-data))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; dataset
 
-(def tau (* 2 js/Math.PI))
+(def dataset
+  [{:age "<5" :population 2704659}
+   {:age "5-13" :population 4499890}
+   {:age "14-17" :population 2159981}
+   {:age "18-24" :population 3853788}
+   {:age "25-44" :population 14106543}
+   {:age "45-64" :population 8819342}
+   {:age "≥65" :population 612463}])
+
+(defn randomize-dataset [ratom]
+  (swap! ratom assoc :dataset
+         (drop-last (rand-int 6) dataset)))
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; example
+
+(defn example [ratom]
+  [:div
+   [title "Pie Chart" "pie"]
+   [btn-randomize-data ratom randomize-dataset]
+   [viz ratom]])
