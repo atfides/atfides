@@ -65,7 +65,7 @@
      ;; (viz example)
 
      [:h3 "From G-utils"]
-     (gutils/example gutils/dataset)
+     (gutils/example (r/atom gutils/dataset))
 
      ;; For testing purposes
      [:h3 "Test addresses"]
