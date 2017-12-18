@@ -1,8 +1,6 @@
 (ns atfides.graphs.utils
   (:require [rid3.core :as rid3]
-            ;; [rid3.pie :as pie-charter]
             [reagent.core :as r]))
-
 
 (defn title [label file-name]
   [:div
@@ -18,7 +16,6 @@
                     file-name
                     ".cljs")}
      "source"]]])
-
 
 (defn btn-randomize-data [ratom randomize-fn]
   [:div
@@ -75,8 +72,6 @@
   (-> js/d3
       (.scaleOrdinal #js ["#98abc5" "#8a89a6" "#7b6888" "#6b486b" "#a05d56" "#d0743c" "#ff8c00"])))
 
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; elements
 
@@ -115,8 +110,6 @@
 
         (.style "font" "10px sans-serif")
         (.style "text-anchor" "middle"))))
-
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; viz
