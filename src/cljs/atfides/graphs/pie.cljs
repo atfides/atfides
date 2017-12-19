@@ -1,4 +1,4 @@
-(ns atfides.graphs.utils
+(ns atfides.graphs.pie
   (:require [rid3.core :as rid3]
             [reagent.core :as r]))
 
@@ -13,8 +13,7 @@
     {:style {:font-family "sans-serif"
              :margin-top  0}}
     [:a {:href (str "https://github.com/gadfly361/rid3/blob/master/src/demo/rid3/"
-                    file-name
-                    ".cljs")}
+                    file-name)}
      "source"]]])
 
 (defn btn-randomize-data [ratom randomize-fn]
