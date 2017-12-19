@@ -43,8 +43,6 @@
           (set! (.-endAngle d) (interpolate t))
           (arc d))))))
 
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; svg
 
@@ -89,20 +87,13 @@
   (let [arc (create-arc ratom)]
     (-> node
         (.datum #js {:endAngle (* 0.127 tau)})
+        ;; implement gauge feature red -> yellow -> orange -> green
         (.style "fill" "orange")
         (.attr "d" arc))))
 
 
 (defn foreground-did-mount [node ratom]
-  (foreground-common node ratom)
-  (js/d3.interval
-    (fn []
-      (-> node
-          .transition
-          (.duration 750)
-          (.attrTween "d" (arc-tween (* (js/Math.random) tau)
-                                     ratom))))
-    1500))
+  (foreground-common node ratom))
 
 (defn foreground-did-update [node ratom]
   (foreground-common node ratom))
