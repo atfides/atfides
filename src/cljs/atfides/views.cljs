@@ -9,7 +9,9 @@
             [cljs-react-material-ui.reagent :as ui]
             [cljs-react-material-ui.icons :as ic]
             [rid3.core :as rid3]
-            [atfides.graphs.utils :as gutils]
+            [atfides.graphs.pie :as gpie]
+            [atfides.graphs.bar :as gbar]
+            [atfides.graphs.arc :as garc]
             [reagent.core :as r]))
 
 (defn pub-key-input [{:keys [pub-addr on-save on-stop]}]
@@ -61,11 +63,15 @@
         (for [addr local-keys-map]
           ^{:key (:id addr)} [pub-addr-item addr])]
 
-     ;; [:h3 "In place example"]
-     ;; (viz example)
 
-     [:h3 "From G-utils"]
-     (gutils/example (r/atom gutils/dataset))
+     [:h3 "From Graph Pie"]
+     [gpie/example (r/atom {:dataset gpie/dataset})]
+
+     [:h3 "From Graph Barchart"]
+     [gbar/example (r/atom {:dataset gbar/dataset})]
+
+     [:h3 "From Graph Arc"]
+     [garc/example  (r/atom {})]
 
      ;; For testing purposes
      [:h3 "Test addresses"]
