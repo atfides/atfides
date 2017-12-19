@@ -128,10 +128,3 @@
                       :did-update foreground-did-update}]}])
 
 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; example
-
-(defn example [ratom]
-  [:div
-   [viz ratom]])

@@ -65,13 +65,13 @@
 
 
      [:h3 "From Graph Pie"]
-     [gpie/example (r/atom {:dataset gpie/dataset})]
+     [gpie/viz (r/atom {:dataset gpie/dataset})]
 
      [:h3 "From Graph Barchart"]
-     [gbar/example (r/atom {:dataset gbar/dataset})]
+     [gbar/viz (r/atom {:dataset gbar/dataset})]
 
      [:h3 "From Graph Arc"]
-     [garc/example  (r/atom {})]
+     [garc/viz  (r/atom {})]
 
      ;; For testing purposes
      [:h3 "Test addresses"]

@@ -2,12 +2,6 @@
   (:require [rid3.core :as rid3]
             [reagent.core :as r]))
 
-(defn btn-randomize-data [ratom randomize-fn]
-  [:div
-   [:button
-    {:on-click #(randomize-fn ratom)}
-    "Randomize data"]])
-
 ;; Example from:
 ;; https://bl.ocks.org/mbostock/3885304
 
@@ -181,11 +175,6 @@
    {:letter "Z" :frequency .00074}])
 
 
-(defn randomize-dataset [ratom]
-  (swap! ratom assoc :dataset
-         (drop-last (rand-int 25) dataset)))
-
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; viz
@@ -214,15 +203,4 @@
                       :class     "y-label"
                       :tag       "text"
                       :did-mount y-label}]}])
-
-
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; example
-
-(defn example [ratom]
-  [:div
-   [btn-randomize-data ratom randomize-dataset]
-   [viz ratom]])
 

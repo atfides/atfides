@@ -2,13 +2,6 @@
   (:require [rid3.core :as rid3]
             [reagent.core :as r]))
 
-
-(defn btn-randomize-data [ratom randomize-fn]
-  [:div
-   [:button
-    {:on-click #(randomize-fn ratom)}
-    "Randomize data"]])
-
 ;; Example from:
 ;; https://bl.ocks.org/mbostock/3887235
 
@@ -132,15 +125,3 @@
    {:age "45-64" :population 8819342}
    {:age "≥65" :population 612463}])
 
-(defn randomize-dataset [ratom]
-  (swap! ratom assoc :dataset
-         (drop-last (rand-int 6) dataset)))
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; example
-
-(defn example [ratom]
-  [:div
-   [btn-randomize-data ratom randomize-dataset]
-   [viz ratom]])
