@@ -2,20 +2,6 @@
   (:require [rid3.core :as rid3]
             [reagent.core :as r]))
 
-(defn title [label file-name]
-  [:div
-   [:h3
-    {:style {:font-family "sans-serif"
-             :font-weight "300"
-             :margin      0}}
-    label]
-   [:h4
-    {:style {:font-family "sans-serif"
-             :margin-top  0}}
-    [:a {:href (str "https://github.com/gadfly361/rid3/blob/master/src/demo/rid3/"
-                    file-name)}
-     "source"]]])
-
 (defn btn-randomize-data [ratom randomize-fn]
   [:div
    [:button
@@ -237,7 +223,6 @@
 
 (defn example [ratom]
   [:div
-   [title "Barchart 2" "barchart2"]
    [btn-randomize-data ratom randomize-dataset]
    [viz ratom]])
 

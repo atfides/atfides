@@ -2,22 +2,6 @@
   (:require [rid3.core :as rid3]
             [reagent.core :as r]))
 
-(defn title [label file-name]
-  [:div
-   [:h3
-    {:style {:font-family "sans-serif"
-             :font-weight "300"
-             :margin      0}}
-    label]
-   [:h4
-    {:style {:font-family "sans-serif"
-             :margin-top  0}}
-    [:a {:href (str "https://github.com/gadfly361/rid3/blob/master/src/demo/rid3/"
-                    file-name
-                    ".cljs")}
-     "source"]]])
-
-
 ;; Example from:
 ;; http://bl.ocks.org/mbostock/5100636
 
@@ -150,5 +134,4 @@
 
 (defn example [ratom]
   [:div
-   [title "Arc Tween" "arc_tween"]
    [viz ratom]])
