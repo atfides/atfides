@@ -26,7 +26,7 @@
   (-> js/d3
       .pie
       (.value (fn [d]
-                (aget d "population")))
+                (aget d "value")))
       (.sort nil)))
 
 (defn prepare-dataset [ratom]
@@ -75,7 +75,7 @@
     (-> node
         (.attr "d" path)
         (.attr "fill" (fn [d]
-                        (color (aget d "data" "age"))))
+                        (color (aget d "data" "ticker"))))
         (.style "stroke" "#FFF"))))
 
 (defn text-label [node ratom]
@@ -85,7 +85,7 @@
                              (str "translate(" (.centroid label d) ")")))
         (.attr "dy" "0.35em")
         (.text (fn [d]
-                 (aget d "data" "age")))
+                 (aget d "data" "ticker")))
 
         (.style "font" "10px sans-serif")
         (.style "text-anchor" "middle"))))
@@ -117,11 +117,11 @@
 ;; dataset
 
 (def dataset
-  [{:age "<5" :population 2704659}
-   {:age "5-13" :population 4499890}
-   {:age "14-17" :population 2159981}
-   {:age "18-24" :population 3853788}
-   {:age "25-44" :population 14106543}
-   {:age "45-64" :population 8819342}
-   {:age "≥65" :population 612463}])
+  [{:ticker "BTC" :value 2704}
+   {:ticker "ETH" :value 4499}
+   {:ticker "LTC" :value 2159}
+   {:ticker "BCH" :value 3853}
+   {:ticker "ZCH" :value 14106}
+   {:ticker "EOS" :value 8819}
+   {:ticker "ETC" :value 612}])
 

@@ -64,16 +64,16 @@
           ^{:key (:id addr)} [pub-addr-item addr])]
 
 
-     [:h3 "From Graph Pie"]
+     [:h2 "Hodling Allocations"]
      [gpie/viz (r/atom {:dataset gpie/dataset})]
 
-     [:h3 "From Graph Barchart"]
-     [gbar/viz (r/atom {:dataset gbar/dataset})]
-
-     [:h3 "From Graph Arc"]
+     [:h2 "Crypto Millionaire yet?"]
      [garc/viz  (r/atom {})]
 
-     ;; For testing purposes
+     [:h2 "Historical Hodlings: **vote for this feature**"]
+     [gbar/viz (r/atom {:dataset gbar/dataset})]
+
+
      [:h3 "Test addresses"]
      (utils/test-addresses)]))
 
