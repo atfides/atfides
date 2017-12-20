@@ -121,7 +121,7 @@
    {:ticker "ETH" :value 4499}
    {:ticker "LTC" :value 2159}
    {:ticker "BCH" :value 3853}
-   {:ticker "ZCH" :value 14106}
-   {:ticker "EOS" :value 8819}
+   {:ticker "ZCH" :value 7106}
+   {:ticker "EOS" :value 6819}
    {:ticker "ETC" :value 612}])
 

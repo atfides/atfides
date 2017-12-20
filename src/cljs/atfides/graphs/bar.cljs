@@ -109,7 +109,7 @@
       (.attr "text-anchor" "end")
       (.attr "font-size" 10)
       (.attr "font-family" "sans-serif")
-      (.text "value")))
+      (.text "$ value")))
 
 
 

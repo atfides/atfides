@@ -56,7 +56,7 @@
   ;; db example: Think harder about the data structure.
   (fn [pub-keys [pub-key]]                     ;; because of trim-v the 2nd parameter is not [_ text]
     (let [id (allocate-next-id pub-keys)]
-      (assoc pub-keys id {:id id :pub-addr pub-key}))))
+      (assoc pub-keys id {:id id :pub-addr pub-key :balance pub-key}))))
 
 
 (rf/reg-event-db
