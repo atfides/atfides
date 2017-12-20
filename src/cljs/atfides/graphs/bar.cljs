@@ -73,6 +73,7 @@
         (.padding 0.1)
         (.domain (clj->js domain)))))
 
+;; graphs from 0 to max-y
 (defn create-y-scale [ratom]
   (let [dataset (get @ratom :dataset)
         height  (get-height ratom)
@@ -81,8 +82,6 @@
         .scaleLinear
         (.rangeRound #js [height 0])
         (.domain #js [0 max-y]))))
-
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; axis
@@ -100,8 +99,7 @@
 (defn y-axis [node ratom]
   (let [y-scale (create-y-scale ratom)]
     (-> node
-        (.call (-> (.axisLeft js/d3 y-scale)
-                   (.ticks 10 "%"))))))
+        (.call (-> (.axisLeft js/d3 y-scale))))))
 
 (defn y-label [node ratom]
   (-> node
