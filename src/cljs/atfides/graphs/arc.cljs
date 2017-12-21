@@ -1,6 +1,7 @@
 (ns atfides.graphs.arc
   (:require [rid3.core :as rid3]
-            [reagent.core :as r]))
+            [reagent.core :as r]
+            [re-frame.core :as rf]))
 
 ;; Example from:
 ;; http://bl.ocks.org/mbostock/5100636
@@ -119,3 +120,8 @@
                       :did-update foreground-did-update}]}])
 
 
+(defn GraphArc []
+  (let [local-store (rf/subscribe [:local-pub-keys])])
+  (fn []
+    (let [];; local-keys-map (vals @local-store)
+      (viz (r/atom {})))))

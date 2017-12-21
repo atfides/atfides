@@ -1,6 +1,9 @@
 (ns atfides.graphs.pie
   (:require [rid3.core :as rid3]
-            [reagent.core :as r]))
+            [reagent.core :as r]
+            [atfides.subs :as subs]
+            [print.foo :as pf :include-macros true]
+            [re-frame.core :as rf]))
 
 ;; Example from:
 ;; https://bl.ocks.org/mbostock/3887235
@@ -112,16 +115,23 @@
                        :prepare-dataset prepare-dataset}]}])
 
 
+(defn GraphPie []
+  (let [local-store (rf/subscribe [:local-pub-keys])]
+    (fn []
+      (let [local-keys-map (vals @local-store)
+            fmt (fn [addr-map]
+                  (let [{:keys [pub-addr balance]} addr-map]
+                    {:ticker pub-addr :value (js/parseInt balance)}))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; dataset
+            dataset (mapv fmt local-keys-map)
 
-(def dataset
-  [{:ticker "BTC" :value 2704}
-   {:ticker "ETH" :value 4499}
-   {:ticker "LTC" :value 2159}
-   {:ticker "BCH" :value 3853}
-   {:ticker "ZCH" :value 7106}
-   {:ticker "EOS" :value 6819}
-   {:ticker "ETC" :value 612}])
+            test-tickers [{:ticker "BTC" :value 2704}
+                          {:ticker "ETH" :value 4499}
+                          {:ticker "LTC" :value 2159}
+                          {:ticker "BCH" :value 3853}
+                          {:ticker "ZCH" :value 7106}]
+
+            result (reduce conj test-tickers dataset)]
+
+           (viz (r/atom {:dataset result}))))))
 

@@ -41,8 +41,8 @@
     :floating-label-text "Paste a new public address, then hit Enter..."
     :full-width true
     :on-save #(do
-                (rf/dispatch [:add-pub-key %])
-                (rf/dispatch [:request-address-data %]))}])
+                (rf/dispatch [:add-pub-key %]))}])
+                ;; (rf/dispatch [:request-address-data %]))}])
 
 
 (defn pub-addr-item
@@ -57,6 +57,7 @@
 (defn pub-addr-list
   []
   (let [local-keys-map (vals @(rf/subscribe [:local-pub-keys]))]
+    (println ">>>>> " local-keys-map)
     [:section#main
      [:h3 "Saved addresses: "]
      [:ul#pub-addr
@@ -65,13 +66,13 @@
 
 
      [:h2 "Hodling Allocations"]
-     [gpie/viz (r/atom {:dataset gpie/dataset})]
+     [gpie/GraphPie]
 
      [:h2 "Crypto Millionaire yet?"]
-     [garc/viz  (r/atom {})]
+     [garc/GraphArc]
 
      [:h2 "Historical Hodlings: **vote for this feature**"]
-     [gbar/viz (r/atom {:dataset gbar/dataset})]
+     [gbar/GraphBar]
 
 
      [:h3 "Test addresses"]

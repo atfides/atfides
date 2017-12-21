@@ -1,6 +1,7 @@
 (ns atfides.graphs.bar
   (:require [rid3.core :as rid3]
-            [reagent.core :as r]))
+            [reagent.core :as r]
+            [re-frame.core :as rf]))
 
 ;; Example from:
 ;; https://bl.ocks.org/mbostock/3885304
@@ -186,3 +187,11 @@
                       :tag       "text"
                       :did-mount y-label}]}])
 
+
+(defn GraphBar []
+  (let [local-store (rf/subscribe [:local-pub-keys])]
+    (fn []
+      (let [local-keys-map (vals @local-store)]
+        ;; only use subs fed data upon feature request
+        ;; aka later :->
+        (viz (r/atom {:dataset dataset}))))))
