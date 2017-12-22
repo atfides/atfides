@@ -17,3 +17,11 @@
 (defn satoshi->btc
   [satoshi]
   (/ satoshi (* 100 1000 1000)))
+
+(defn gauge-signal [gauge]
+  (cond
+    (>= gauge 1) "green"
+    (> gauge 0.75) "orange"
+    (> gauge 0.5) "yellow"
+    (> gauge 0.25) "pink"
+    :else "red"))

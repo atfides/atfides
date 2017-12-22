@@ -1,6 +1,7 @@
 (ns atfides.graphs.arc
   (:require [rid3.core :as rid3]
             [reagent.core :as r]
+            [atfides.utils :as u]
             [re-frame.core :as rf]))
 
 ;; Example from:
@@ -92,8 +93,8 @@
     (-> node
         ;; 0.0 <--- gauge ---> 1
         (.datum #js {:endAngle (* gauge tau)})
-        ;; implement gauge feature red -> yellow -> orange -> green
-        (.style "fill" "orange")
+        ;; red -> pink -> yellow -> orange -> green
+        (.style "fill" (u/gauge-signal gauge))
         (.attr "d" arc))))
 
 
