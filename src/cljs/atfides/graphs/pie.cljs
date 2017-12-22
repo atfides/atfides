@@ -116,9 +116,11 @@
 
 
 (defn GraphPie []
-  (let [local-store (rf/subscribe [:local-pub-keys])]
+  (let [local-store (rf/subscribe [:local-pub-keys])
+        ratom (r/atom {})]
     (fn []
       (let [local-keys-map (vals @local-store)
+
             fmt (fn [addr-map]
                   (let [{:keys [pub-addr balance]} addr-map]
                     {:ticker pub-addr :value (js/parseInt balance)}))
@@ -131,7 +133,9 @@
                           {:ticker "BCH" :value 3853}
                           {:ticker "ZCH" :value 7106}]
 
-            result (reduce conj test-tickers dataset)]
+            result (reduce conj test-tickers dataset)
 
-           (viz (r/atom {:dataset result}))))))
+            _ (swap! ratom assoc :dataset result)]
+
+           [viz ratom]))))
 
