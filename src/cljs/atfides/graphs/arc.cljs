@@ -31,7 +31,7 @@
         radius (/ width 2)]
     (-> js/d3
         .arc
-        (.innerRadius (* 0.8 radius))
+        (.innerRadius (* 0.7 radius))
         (.outerRadius radius)
         (.startAngle 0))))
 
@@ -85,9 +85,13 @@
 ;; foreground
 
 (defn foreground-common [node ratom]
-  (let [arc (create-arc ratom)]
+  (let [arc (create-arc ratom)
+        ;; gauge here is sum (total of crypto assets)
+        gauge (:gauge @ratom)]
+
     (-> node
-        (.datum #js {:endAngle (* 0.127 tau)})
+        ;; 0.0 <--- gauge ---> 1
+        (.datum #js {:endAngle (* gauge tau)})
         ;; implement gauge feature red -> yellow -> orange -> green
         (.style "fill" "orange")
         (.attr "d" arc))))
@@ -121,7 +125,15 @@
 
 
 (defn GraphArc []
-  (let [local-store (rf/subscribe [:local-pub-keys])])
-  (fn []
-    (let [];; local-keys-map (vals @local-store)
-      (viz (r/atom {})))))
+  (let [local-store (rf/subscribe [:local-pub-keys])
+        ratom (r/atom {:gauge 0})]
+    (fn []
+      (let [local-keys-map (vals @local-store)
+            sum-balance (reduce + (map (comp js/parseInt :balance) local-keys-map))
+
+            ;; only mapping 0 > 1 Million | 0.0 > 1.0
+            angle (/ sum-balance (* 1 1000 1000))
+
+            _ (swap! ratom assoc :gauge angle)]
+
+        [viz ratom]))))

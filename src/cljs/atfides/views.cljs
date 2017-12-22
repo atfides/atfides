@@ -66,7 +66,7 @@
 
 
      [:h2 "Hodling Allocations"]
-     [gpie/GraphPie]
+     ;; [gpie/GraphPie]
 
      [:h2 "Crypto Millionaire yet?"]
      [garc/GraphArc]
