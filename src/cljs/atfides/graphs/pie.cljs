@@ -79,6 +79,14 @@
         (.attr "d" path)
         (.attr "fill" (fn [d]
                         (color (aget d "data" "ticker"))))
+        (.on "mouseover" (fn []
+                           (this-as this
+                             (-> (js/d3.select this)
+                                 (.style "fill" "grey")))))
+        (.on "mouseout" (fn [d]
+                          (this-as this
+                            (-> (js/d3.select this)
+                                (.style "fill" (color (aget d "data" "ticker")))))))
         (.style "stroke" "#FFF"))))
 
 (defn text-label [node ratom]

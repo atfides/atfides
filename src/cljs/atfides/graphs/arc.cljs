@@ -95,6 +95,14 @@
         (.datum #js {:endAngle (* gauge tau)})
         ;; red -> pink -> yellow -> orange -> green
         (.style "fill" (u/gauge-signal gauge))
+        (.on "mouseover" (fn []
+                           (this-as this
+                             (-> (js/d3.select this)
+                                 (.style "fill" "grey")))))
+        (.on "mouseout" (fn []
+                          (this-as this
+                            (-> (js/d3.select this)
+                                (.style "fill" (u/gauge-signal gauge))))))
         (.attr "d" arc))))
 
 
