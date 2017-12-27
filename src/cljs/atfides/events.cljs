@@ -2,6 +2,7 @@
   (:require [re-frame.core :as rf]
             [atfides.db :as db]
             [ajax.core :as ajax]
+            [atfides.utils :as u]
             [day8.re-frame.http-fx]))
 
 ;; -- Storing pub-keys to localStore --------
@@ -17,7 +18,7 @@
                             rf/trim-v])                            ;; removes first (event id) element from the event vec
 
 
-;; -- Taken form re-frame's todomvc example :)
+;; -- Taken from re-frame's todomvc example :)
 (defn allocate-next-id
   "Returns the pub-key id.
   Assumes pub-keys are sorted.
@@ -28,35 +29,35 @@
 
 ;; -- Event Handlers -------------------------
 ;;
-;; There are only 3 event:
-;; initialise-db | add-pub-key | delete-pub-key
+;; There are 3 main -db events:
+;; initialize-db | add-pub-key | delete-pub-key
 
 
-;; fetch related data if pre-existing pub-keys
-(rf/reg-event-db
- :initialise-db
+;; Fetch related data from pre-existing pub-keys
+;; We need an -fx coz we're pulling from LS
+(rf/reg-event-fx
+ :initialize-db
 
- ;; Retrieve former public addr from localStorage if any
+ ;; Retrieve former public addr(s) from localStorage if any
  [(rf/inject-cofx :local-store-pub-keys)]
 
  ;; the event handler being registered
- (fn [{:keys [local-pub-keys]} _]
-   {:db (assoc db/default-db :local-pub-keys local-pub-keys)}))
+ (fn [{:keys [db local-pub-keys]} _]
+   {:db (assoc db :local-pub-keys local-pub-keys)}))
 
 
-;; usage: > (dispatch [:add-pub-key])
-;; add submitted pub-key
+;; Overall Strategy: add pub key with :balance nil
+;; Then update params when data lands
 (rf/reg-event-db
   :add-pub-key
 
-  ;; looks after writing out pub-keys to localStore
   pub-keys-interceptors
 
-  ;; alt {:id id :pub-key pub-key}
-  ;; db example: Think harder about the data structure.
-  (fn [pub-keys [pub-key]]                     ;; because of trim-v the 2nd parameter is not [_ text]
+  (fn [pub-keys [pub-key]]
+    (println "[add-pub-k]>>>> pub-keys: " pub-keys)
+    (println "[add-pub-k]>>>> pub-key: " pub-key)
     (let [id (allocate-next-id pub-keys)]
-      (assoc pub-keys id {:id id :pub-addr pub-key :balance pub-key}))))
+      (assoc pub-keys id {:id id :pub-addr pub-key :balance nil}))))
 
 
 (rf/reg-event-db
@@ -90,25 +91,34 @@
     {:http-xhrio {:method         :get
                   ;; https://www.blockcypher.com/dev/bitcoin/#address-balance-endpoint
                   :uri (str "https://api.blockcypher.com/v1/btc/main/addrs/" (name addr) "/balance")
-                  :response-format (ajax/json-request-format)
-                  ;; :on-failure [:failed-get-request]
-                  :on-success [:address-data-loaded]}}))
+                  :response-format (ajax/json-response-format {:keywords? true})
+                  :on-success [:address-data-loaded]
+                  :on-failure [:failed-get-request]}}))
 
-(rf/reg-event-fx
+(rf/reg-event-db
   :address-data-loaded
 
-  (fn [db item2 item3]
-    (println "Address data loaded......XXXXXX...")
-    (println "Time to insert smth")
-    (println "Item 2: " item2)
-    (println "Item 3: " item3)
-    (println "db: " db)))
+  ;; interceptor takes care of saving data to LS
+  pub-keys-interceptors
 
+  ;; resp -> :event -> [{:address 1H6ZZpRmMnrw8ytepV3BYwMjYYnEkWDqVP,
+  ;; :balance 307780, :final_balance 307780....
+  (fn [db [{:keys [address balance]}]]
+    (println "Address data loaded......>>>>>XXX...")
+    ;; balance is in satoshis (blockcypher) > convert
 
-(rf/reg-event-fx
+    ;; 1. Find the id of the address
+    ;; 2. Dispatch an event to update address data:
+    ;;    * from nil to actual amount
+    (let [id-seq (u/id-by-addr db address)
+          id (first id-seq)]
+      (println "Check computes: >>>>>>")
+      (println "(first id-seq)" id)
+      (assoc-in db [id :balance] balance))))
+
+(rf/reg-event-db
   :failed-get-request
 
-  (fn [item1 item2]
-    (println "Item 1: " item1)
-    (println "Item 2: " item2)
-    (println "Failed GET request")))
+  (fn [db event]
+    (println "Event: " event)
+    (println ">>> Failed GET request")))

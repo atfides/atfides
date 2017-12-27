@@ -1,11 +1,6 @@
 (ns atfides.utils
   (:require [print.foo :as pf :include-macros true]))
 
-(defn target-value
-  "updates value from event in form text field"
-  [e]
-  (aget e "target" "value"))
-
 (defn test-addresses []
   [:ul
    [:li "1andreas3batLhQa2FawWjeyjCqyBzypd"]
@@ -25,3 +20,15 @@
     (> gauge 0.5) "yellow"
     (> gauge 0.25) "pink"
     :else "red"))
+
+(defn id-by-addr
+  "finds id by address lookup in LS
+   **Attention** returns a lazy seq
+   use (first result) to get value"
+  [LS addr]
+  (println "LS: " LS)
+  (for [val-pairs (vals LS)
+        ;; (for [val-pairs (vals (:local-pub-keys LS))])
+        :when (= (:pub-addr val-pairs) addr)
+        :let [id (:id val-pairs)]]
+    id))

@@ -41,8 +41,9 @@
     :floating-label-text "Paste a new public address, then hit Enter..."
     :full-width true
     :on-save #(do
-                (rf/dispatch [:add-pub-key %]))}])
-                ;; (rf/dispatch [:request-address-data %]))}])
+                ;; we need to save the pub-key with nil values > then update later
+                (rf/dispatch [:add-pub-key %])
+                (rf/dispatch [:request-address-data %]))}])
 
 
 (defn pub-addr-item

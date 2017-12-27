@@ -23,7 +23,7 @@
 
 (defn mount-root []
   (re-frame/clear-subscription-cache!)
-  (re-frame/dispatch-sync [::events/initialise-db])
+  (re-frame/dispatch-sync [::events/initialize-db])
   (reagent/render [views/main-panel]
                   (.getElementById js/document "app")))
 

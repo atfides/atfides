@@ -14,7 +14,10 @@
 ;; usage (subscribe [:local-pub-keys])
 (rf/reg-sub
  :local-pub-keys
- (fn [db _]
+ (fn [db event-vec]
+   (println ">>> Inside reg :local-pub-keys ------>")
+   (println ">>> db: " db)
+   (println ">>> vec1: " event-vec)
    (:local-pub-keys db)))
 
 
