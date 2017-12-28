@@ -106,4 +106,4 @@
 
 (defn main-panel []
   [:div [:h2 "Test First Component"]
-        (home-page)])
+        [home-page]])

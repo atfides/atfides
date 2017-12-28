@@ -28,7 +28,14 @@
   [LS addr]
   (println "LS: " LS)
   (for [val-pairs (vals LS)
-        ;; (for [val-pairs (vals (:local-pub-keys LS))])
         :when (= (:pub-addr val-pairs) addr)
         :let [id (:id val-pairs)]]
     id))
+
+;; With [Allocations by crypto tickers] feature
+;; this helper will be obsolete
+(defn trunc-addr
+  "Truncate pub-addr to display nicely on pie chart"
+  [addr]
+  (str (subs addr 0 10) "..."))
+
