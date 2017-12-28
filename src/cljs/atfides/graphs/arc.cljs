@@ -138,6 +138,7 @@
         ratom (r/atom {:gauge 0})]
     (fn []
       (let [local-keys-map (vals @local-store)
+            ;; assumes that :balance is in $
             sum-balance (reduce + (map (comp js/parseInt :balance) local-keys-map))
 
             ;; only mapping 0 > 1 Million | 0.0 > 1.0
