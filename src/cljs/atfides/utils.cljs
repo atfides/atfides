@@ -39,3 +39,7 @@
   [addr]
   (str (subs addr 0 10) "..."))
 
+(defn new-target-link
+  "Opens new link on a seperate tab"
+  [content link]
+  [:a {:href link :target :_blank} content])

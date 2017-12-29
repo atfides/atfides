@@ -12,7 +12,8 @@
             [atfides.graphs.pie :as gpie]
             [atfides.graphs.bar :as gbar]
             [atfides.graphs.arc :as garc]
-            [reagent.core :as r]))
+            [reagent.core :as r]
+            [atfides.utils :as u]))
 
 (def paper-base {:padding 20
                  :margin 40
@@ -79,11 +80,10 @@
                  {:palette {:text-color (color :green600)}})}
 
    [:div
-    ;; Card 0: Think harder ---------------------
-    ;; [ui/app-bar {:title "Total Hodlings: $0" :icon-element-right (r/as-element [ui/icon-button (ic/action-account-balance-wallet)])}]
-
     ;; Card 1: welcome ---------------------
     [ui/paper {:style paper-base}
+     [:h1 "@Fides"]
+     [:p "Visualize all your crypto hodlings."]
      [pub-key-entry]]
 
 
@@ -102,11 +102,21 @@
 
     ;; Card 5: sponsor ---------------------
 
-    [ui/paper {:style paper-base}
-     [:h2 "Historical Hodlings: **vote for this feature | SP**"]
+    [ui/paper {:style (dissoc paper-base :text-align)}
+     [:h3 "Sponsor these upcoming features:"]
+     [:p "~ Allocation by tickers i.e: btc, eth, ltc in aggregate. $500"]
+     [:p "~ Visualize by storage i.e: by *hardware* *hot* *cold*. $10,000"]
+     [:p "~ Hodlings overtime. Meta-crunching of investing vs spending on all provided addresses. $200,000"]
+     ;; [:br] ;; [:p "Historical Hodlings: **dummy example**"]
      [gbar/GraphBar]]
 
     ;; Card 6: contact ---------------------
+    [ui/paper {:style paper-base}
+     ;; [:p "How to: just enter a public crypto-currency address and hit enter :)"]
+     [:p "Any ideas, suggestions for @Fides, ping me on Twitter: "
+      [:bold (u/new-target-link "@mohamedhayibor" "https://twitter.com/mohamedhayibor")]]]
+
+    ;; Testing only ---------------------
     [ui/paper {:style (dissoc paper-base :text-align)}
      [:h3 "Test addresses"]
      [utils/test-addresses]]
