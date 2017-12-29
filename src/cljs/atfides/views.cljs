@@ -52,24 +52,28 @@
                 (rf/dispatch [:request-address-data %]))}])
 
 
-(defn pub-addr-item
-  []
-  (let [editing (r/atom false)]
-    (fn [{:keys [id pub-addr]}]
-      [:li
-       [:div.view
-        [:label pub-addr]]])))
-
-
 (defn pub-addr-list
   []
   (let [local-keys-map (vals @(rf/subscribe [:local-pub-keys]))]
     (println ">>>>> " local-keys-map)
-    [:section#main
-     [ui/paper [:h3 "Saved addresses: "]
-      [:ul#pub-addr
+    [ui/table {:selectable false}
+     [ui/table-header {:adjust-for-checkbox false :display-select-all false}
+      [ui/table-row
+       [ui/table-header-column "Address"]
+       [ui/table-header-column "Ticker"]
+       [ui/table-header-column "Amount"]]]
+     [ui/table-body {:display-row-checkbox false}
+      (doall
         (for [addr local-keys-map]
-          ^{:key (:id addr)} [pub-addr-item addr])]]]))
+          [ui/table-row {:key (:id addr) :selectable false}
+           [ui/table-row-column (:pub-addr addr)]
+           [ui/table-row-column (:ticker addr)]
+           [ui/table-row-column (:balance addr)]]))]
+     [ui/table-footer
+      [ui/table-row
+       [ui/table-row-column {:style {:text-align "right"}}
+        ;; will setup subs later
+        [:h1 "Total: $0"]]]]]))
 
 
 
@@ -98,7 +102,8 @@
      [garc/GraphArc]]
 
     ;; Card 4: accounts ---------------------
-    [pub-addr-list]
+    [ui/paper {:style (dissoc paper-base :text-align)}
+     [pub-addr-list]]
 
     ;; Card 5: sponsor ---------------------
 
