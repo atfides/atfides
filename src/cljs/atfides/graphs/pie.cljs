@@ -15,7 +15,7 @@
   (let [page-width (get @ratom :page-width)]
     (max (min 500
               (- page-width 100))
-         300)))
+         400)))
 
 (defn get-height [ratom]
   (let [width (get-width ratom)]

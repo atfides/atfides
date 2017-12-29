@@ -14,6 +14,11 @@
             [atfides.graphs.arc :as garc]
             [reagent.core :as r]))
 
+(def paper-base {:padding 20
+                 :margin 40
+                 :text-align "center"})
+
+
 (defn pub-key-input [{:keys [pub-addr on-save on-stop]}]
   (let [val (r/atom pub-addr)
         stop #(do (reset! val "")
@@ -60,50 +65,55 @@
   (let [local-keys-map (vals @(rf/subscribe [:local-pub-keys]))]
     (println ">>>>> " local-keys-map)
     [:section#main
-     [:h3 "Saved addresses: "]
-     [:ul#pub-addr
+     [ui/paper [:h3 "Saved addresses: "]
+      [:ul#pub-addr
         (for [addr local-keys-map]
-          ^{:key (:id addr)} [pub-addr-item addr])]
-
-
-     [:h2 "Hodling Allocations"]
-     [gpie/GraphPie]
-
-     [:h2 "Crypto Millionaire yet?"]
-     [garc/GraphArc]
-
-     [:h2 "Historical Hodlings: **vote for this feature**"]
-     [gbar/GraphBar]
-
-
-     [:h3 "Test addresses"]
-     (utils/test-addresses)]))
+          ^{:key (:id addr)} [pub-addr-item addr])]]]))
 
 
 
 (defn home-page []
   [ui/mui-theme-provider
    {:mui-theme (get-mui-theme
-                 ;; (aget js/MaterialUIStyles "DarkRawTheme"))}
+                 ;; (aget js/MaterialUIStyles "DarkRawTheme")
                  {:palette {:text-color (color :green600)}})}
 
    [:div
-    [ui/app-bar {:title "Total Hodlings: $0"
-                 :icon-element-right
-                        (r/as-element [ui/icon-button
-                                       (ic/action-account-balance-wallet)])}]
+    ;; Card 0: Think harder ---------------------
+    ;; [ui/app-bar {:title "Total Hodlings: $0" :icon-element-right (r/as-element [ui/icon-button (ic/action-account-balance-wallet)])}]
 
-    [pub-key-entry]
-    [:br]
+    ;; Card 1: welcome ---------------------
+    [ui/paper {:style paper-base}
+     [pub-key-entry]]
 
+
+    ;; Card 2: allocations ---------------------
+    [ui/paper {:style paper-base}
+     [:h2 "Hodling Allocations / Diversification"]
+     [gpie/GraphPie]]
+
+    ;; Card 3: a milli yet ---------------------
+    [ui/paper {:style paper-base}
+     [:h2 "Crypto Millionaire yet?"]
+     [garc/GraphArc]]
+
+    ;; Card 4: accounts ---------------------
     [pub-addr-list]
 
-    [:br]
+    ;; Card 5: sponsor ---------------------
+
+    [ui/paper {:style paper-base}
+     [:h2 "Historical Hodlings: **vote for this feature | SP**"]
+     [gbar/GraphBar]]
+
+    ;; Card 6: contact ---------------------
+    [ui/paper {:style (dissoc paper-base :text-align)}
+     [:h3 "Test addresses"]
+     [utils/test-addresses]]
 
     [:br]]])
 
 
 
 (defn main-panel []
-  [:div [:h2 "Test First Component"]
-        [home-page]])
+  [:div [home-page]])
