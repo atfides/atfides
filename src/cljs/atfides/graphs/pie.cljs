@@ -3,7 +3,8 @@
             [reagent.core :as r]
             [atfides.subs :as subs]
             [print.foo :as pf :include-macros true]
-            [re-frame.core :as rf]))
+            [re-frame.core :as rf]
+            [atfides.utils :as u]))
 
 ;; Example from:
 ;; https://bl.ocks.org/mbostock/3887235
@@ -131,7 +132,7 @@
 
             fmt (fn [addr-map]
                   (let [{:keys [pub-addr balance]} addr-map]
-                    {:ticker pub-addr :value (js/parseInt balance)}))
+                    {:ticker (u/trunc-addr pub-addr) :value (js/parseInt balance)}))
 
             dataset (mapv fmt local-keys-map)
 
