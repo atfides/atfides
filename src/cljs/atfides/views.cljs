@@ -110,7 +110,8 @@
     [ui/paper {:style (dissoc paper-base :text-align)}
      [:h3 "Sponsor these upcoming features:"]
      [:p "~ Allocation by tickers i.e: btc, eth, ltc in aggregate. $500"]
-     [:p "~ Visualize by storage i.e: by *hardware* *hot* *cold*. $10,000"]
+     [:p "~ Visualize by storage i.e: hardware, software aka hot, cold. $10,000"]
+     [:p "~ A web service (api) to get the balance of any major crypto-currency's address. All in one endpoint. $50,000"]
      [:p "~ Hodlings overtime. Meta-crunching of investing vs spending on all provided addresses. $200,000"]
      ;; [:br] ;; [:p "Historical Hodlings: **dummy example**"]
      [gbar/GraphBar]]
