@@ -3,11 +3,11 @@
 
 (defn test-addresses []
   [:ul
-   [:li "1andreas3batLhQa2FawWjeyjCqyBzypd"]
-   [:li "1NZ4J7qUMmvgRJ5RdipLqREwo8ZZEmuxcb"]
-   [:li "1H6ZZpRmMnrw8ytepV3BYwMjYYnEkWDqVP"]
-   [:li "378j15cCNW1MsTxzxegZ2dFRQZbb4SGP8Y"]
-   [:li "3MdMWGJP4aGVezF1eqjGpbMMwQuwoXfeXG"]])
+   [:li "1KLMhEcYJBJdR1zcNZtTXByw3FnqSHBSm6"]
+   [:li "0x55b78aff680bd386222eac5ba2d8d095460b7e01"]
+   [:li "321NNHjv41Y4jg7S1Vx3esPJZ15izsf4eP"]
+   [:li "LNeNJdV4a6M9a7NXyxHLeSQ8jEnf5Qx3AD"]
+   [:li "3CRSkHdDQ71F1fjMiSt3ikmUtb3JPKtRr3"]])
 
 (defn satoshi->btc
   [satoshi]
