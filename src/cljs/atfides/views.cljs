@@ -55,7 +55,6 @@
 (defn pub-addr-list
   []
   (let [local-keys-map (vals @(rf/subscribe [:local-pub-keys]))]
-    (println ">>>>> " local-keys-map)
     [ui/table {:selectable false}
      [ui/table-header {:adjust-for-checkbox false :display-select-all false}
       [ui/table-row
@@ -128,7 +127,6 @@
      [utils/test-addresses]]
 
     [:br]]])
-
 
 
 (defn main-panel []

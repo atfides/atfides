@@ -42,11 +42,12 @@
  [(rf/inject-cofx :local-store-pub-keys)]
 
  ;; the event handler being registered
- (fn [{:keys [db local-pub-keys]} _]
+ (fn [{:keys [db local-store-pub-keys] :as coefx} _]
    (println ">> inside :initialize-db>>>>")
-   (println "local-pub-keys: " local-pub-keys)
+   (println ">>>> coefx:>> " coefx)
+   (println "local-store-pub-keys: " local-store-pub-keys)
    (println "db: " db)
-   {:db (assoc db/default-db :local-pub-keys local-pub-keys)}))
+   {:db (assoc db/default-db :local-pub-keys local-store-pub-keys)}))
 
 
 ;; Overall Strategy: add pub key with :balance nil
