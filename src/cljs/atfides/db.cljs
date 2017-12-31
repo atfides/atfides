@@ -28,8 +28,7 @@
 (rf/reg-cofx
   :local-store-pub-keys
   (fn [cofx _]
-    (println ">>>>> :local-store-pub-keys > why no persistence? XXXX")
-    (println "cofx: " cofx)
+    (println ":db :local-store-pub-keys cofx: " cofx)
     ;; put the localStore pub-keys into the coeffect under
     ;; :local-store-pub-keys
     (assoc cofx :local-store-pub-keys

@@ -7,14 +7,14 @@
 (rf/reg-sub
  :local-pub-keys
  (fn [db event-vec]
-   (println ">>> Inside reg :local-pub-keys ------>")
+   (println ">>> Inside subs :local-pub-keys ------>")
    (println ">>> db: " db)
    (:local-pub-keys db)))
 
 (rf/reg-sub
   :ticker-prices
   (fn [db _]
-    (println ">>> Inside reg :ticker-prices ------>")
+    (println ">>> Inside subs :ticker-prices ------>")
     (println ">>> db: " db)
     (:ticker-prices db)))
 

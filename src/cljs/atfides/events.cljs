@@ -100,7 +100,7 @@
                   :uri (u/route-get addr)
                   :response-format (ajax/json-response-format {:keywords? true})
                   :on-success [:address-data-loaded]
-                  :on-failure [:failed-get-request]}}))
+                  :on-failure [:failed-get-addr]}}))
 
 (rf/reg-event-db
   :address-data-loaded
@@ -124,8 +124,41 @@
       (assoc-in db [id :balance] balance))))
 
 (rf/reg-event-db
-  :failed-get-request
+  :failed-get-addr
 
   (fn [db event]
     (println "Event: " event)
-    (println ">>> Failed GET request")))
+    (println ">>> Failed GET for address data")))
+
+;; -- Fetching ticker-prices ----------------
+(rf/reg-event-fx
+  :request-ticker-prices
+
+  (fn [item1 item2]
+    (println "item1: " item1)
+    (println "item2: " item2)
+
+    {:http-xhrio {:method         :get
+                  :uri "https://api.coinmarketcap.com/v1/ticker/?limit=10"
+                  :response-format (ajax/json-response-format {:keywords? true})
+                  :on-success [:ticker-prices-loaded]
+                  :on-failure [:failed-get-tickers]}}))
+
+(rf/reg-event-db
+  :ticker-prices-loaded
+
+  pub-keys-interceptors
+
+  ;; we only care about btc ltc eth prices
+  (fn [item1 item2]
+    (println "inside :ticker-prices-loaded")
+    (println "item1: " item1)
+    (println "item2: " item2)))
+
+
+(rf/reg-event-db
+  :failed-get-tickers
+  (fn [db event]
+    (println ">> :failed-get-tickers")
+    (println "db: " db)
+    (println "event: " event)))
