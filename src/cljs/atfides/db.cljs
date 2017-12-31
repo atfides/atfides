@@ -4,7 +4,10 @@
 
 ;; -- Default db Value ------------------
 (def default-db
-  {:local-pub-keys (sorted-map)})
+  {:local-pub-keys (sorted-map)
+   :ticker-prices {:btc nil
+                   :eth nil
+                   :ltc nil}})
 
 ;; -- Local Storage ---------------------
 ;; They (pub-keys) stick to the browser under default settings
@@ -25,6 +28,8 @@
 (rf/reg-cofx
   :local-store-pub-keys
   (fn [cofx _]
+    (println ">>>>> :local-store-pub-keys > why no persistence? XXXX")
+    (println "cofx: " cofx)
     ;; put the localStore pub-keys into the coeffect under
     ;; :local-store-pub-keys
     (assoc cofx :local-store-pub-keys

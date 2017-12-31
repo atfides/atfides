@@ -43,7 +43,10 @@
 
  ;; the event handler being registered
  (fn [{:keys [db local-pub-keys]} _]
-   {:db (assoc db :local-pub-keys local-pub-keys)}))
+   (println ">> inside :initialize-db>>>>")
+   (println "local-pub-keys: " local-pub-keys)
+   (println "db: " db)
+   {:db (assoc db/default-db :local-pub-keys local-pub-keys)}))
 
 
 ;; Overall Strategy: add pub key with :balance nil

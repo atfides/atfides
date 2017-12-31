@@ -1,7 +1,7 @@
 (ns atfides.core
   (:require [goog.events :as events]
             [reagent.core :as reagent]
-            [re-frame.core :as re-frame]
+            [re-frame.core :as rf]
             [devtools.core :as devtools]
             [atfides.db :as db]
             [atfides.events]
@@ -14,20 +14,7 @@
 (devtools/install!)
 (enable-console-print!)
 
-
-(defn dev-setup []
-  (when config/debug?
-    (enable-console-print!)
-    (println "X: dev  mode")))
-
-
-(defn mount-root []
-  (re-frame/clear-subscription-cache!)
-  (re-frame/dispatch-sync [::events/initialize-db])
+(defn ^:export init []
+  (rf/dispatch-sync [:initialize-db])
   (reagent/render [views/main-panel]
                   (.getElementById js/document "app")))
-
-
-(defn ^:export init []
-  (dev-setup)
-  (mount-root))
