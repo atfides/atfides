@@ -93,7 +93,7 @@
 
     {:http-xhrio {:method         :get
                   ;; https://www.blockcypher.com/dev/bitcoin/#address-balance-endpoint
-                  :uri (str "https://api.blockcypher.com/v1/btc/main/addrs/" (name addr) "/balance")
+                  :uri (u/route-get addr)
                   :response-format (ajax/json-response-format {:keywords? true})
                   :on-success [:address-data-loaded]
                   :on-failure [:failed-get-request]}}))
