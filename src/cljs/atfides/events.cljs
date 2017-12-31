@@ -57,7 +57,10 @@
     (println "[add-pub-k]>>>> pub-keys: " pub-keys)
     (println "[add-pub-k]>>>> pub-key: " pub-key)
     (let [id (allocate-next-id pub-keys)]
-      (assoc pub-keys id {:id id :pub-addr pub-key :balance nil}))))
+      (assoc pub-keys id {:id id
+                          :pub-addr pub-key
+                          :balance nil
+                          :ticker (u/get-ticker pub-key)}))))
 
 
 (rf/reg-event-db

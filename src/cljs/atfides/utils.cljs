@@ -59,7 +59,7 @@
   (let [eth-reg #"^(0x)?[0-9a-fA-F]{40}$"
         ltc-reg #"^[LM][a-km-zA-HJ-NP-Z1-9]{26,33}$"
         btc-reg #"^[13][a-km-zA-HJ-NP-Z1-9]{25,34}$"
-        eth-l (fn [addr] (first (re-find eth-reg addr)))
+        eth-l (fn [addr] (re-find eth-reg addr))
         ltc-l (fn [addr] (re-find ltc-reg addr))
         btc-l (fn [addr] (re-find btc-reg addr))]
     (if (eth-l addr)
@@ -68,4 +68,20 @@
         (str "https://api.blockcypher.com/v1/ltc/main/addrs/" addr "/balance")
         (if (btc-l addr)
           (str "https://api.blockcypher.com/v1/btc/main/addrs/" addr "/balance")
+          nil)))))
+
+;; Fix duplicate code :-(
+(defn get-ticker [addr]
+  (let [eth-reg #"^(0x)?[0-9a-fA-F]{40}$"
+        ltc-reg #"^[LM][a-km-zA-HJ-NP-Z1-9]{26,33}$"
+        btc-reg #"^[13][a-km-zA-HJ-NP-Z1-9]{25,34}$"
+        eth-l (fn [addr] (re-find eth-reg addr))
+        ltc-l (fn [addr] (re-find ltc-reg addr))
+        btc-l (fn [addr] (re-find btc-reg addr))]
+    (if (eth-l addr)
+      "ETH"
+      (if (ltc-l addr)
+        "LTC"
+        (if (btc-l addr)
+          "BTC"
           nil)))))
