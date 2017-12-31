@@ -9,9 +9,14 @@
    [:li "LNeNJdV4a6M9a7NXyxHLeSQ8jEnf5Qx3AD"]
    [:li "3CRSkHdDQ71F1fjMiSt3ikmUtb3JPKtRr3"]])
 
+;; works for ->ltc
 (defn satoshi->btc
   [satoshi]
   (/ satoshi (* 100 1000 1000)))
+
+(defn wei->eth
+  [wei]
+  (/ wei (* 1000 1000 1000 1000 1000 1000)))
 
 (defn gauge-signal [gauge]
   (cond
@@ -40,6 +45,27 @@
   (str (subs addr 0 10) "..."))
 
 (defn new-target-link
-  "Opens new link on a seperate tab"
+  "Opens new link on a separate tab"
   [content link]
   [:a {:href link :target :_blank} content])
+
+;; -- Sources of regex
+;; https://github.com/litvintech/crypto-balances/blob/master/src/address-checker.coffee#L19
+;; https://www.regexpal.com/99712
+;; https://gist.github.com/Coinfused/4bdc50ea7af212a7324d
+;; removed 3 from ltc bracket, the code assumes segwit -> btc for now
+;; really sorry for this mess, but I'm late
+(defn route-get [addr]
+  (let [eth-reg #"^(0x)?[0-9a-fA-F]{40}$"
+        ltc-reg #"^[LM][a-km-zA-HJ-NP-Z1-9]{26,33}$"
+        btc-reg #"^[13][a-km-zA-HJ-NP-Z1-9]{25,34}$"
+        eth-l (fn [addr] (first (re-find eth-reg addr)))
+        ltc-l (fn [addr] (re-find ltc-reg addr))
+        btc-l (fn [addr] (re-find btc-reg addr))]
+    (if (eth-l addr)
+      (str "https://api.blockcypher.com/v1/eth/main/addrs/" addr "/balance")
+      (if (ltc-l addr)
+        (str "https://api.blockcypher.com/v1/ltc/main/addrs/" addr "/balance")
+        (if (btc-l addr)
+          (str "https://api.blockcypher.com/v1/btc/main/addrs/" addr "/balance")
+          nil)))))
