@@ -48,8 +48,8 @@
     :full-width true
     :on-save #(do
                 ;; we need to save the pub-key with nil values > then update later
-                (rf/dispatch [:add-pub-key %])
-                (rf/dispatch [:request-address-data %]))}])
+                (rf/dispatch [:add-pub-key %]))}])
+                ;; (rf/dispatch [:request-address-data %]))}])
 
 
 (defn pub-addr-list

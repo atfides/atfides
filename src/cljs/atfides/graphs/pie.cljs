@@ -79,7 +79,7 @@
     (-> node
         (.attr "d" path)
         (.attr "fill" (fn [d]
-                        (color (aget d "data" "ticker"))))
+                        (color (aget d "data" "pub-addr"))))
         (.on "mouseover" (fn []
                            (this-as this
                              (-> (js/d3.select this)
@@ -87,7 +87,7 @@
         (.on "mouseout" (fn [d]
                           (this-as this
                             (-> (js/d3.select this)
-                                (.style "fill" (color (aget d "data" "ticker")))))))
+                                (.style "fill" (color (aget d "data" "pub-addr")))))))
         (.style "stroke" "#FFF"))))
 
 (defn text-label [node ratom]
@@ -97,7 +97,7 @@
                              (str "translate(" (.centroid label d) ")")))
         (.attr "dy" "0.35em")
         (.text (fn [d]
-                 (aget d "data" "ticker")))
+                 (aget d "data" "pub-addr")))
 
         (.style "font" "10px sans-serif")
         (.style "text-anchor" "middle"))))
@@ -132,15 +132,15 @@
 
             fmt (fn [addr-map]
                   (let [{:keys [pub-addr balance]} addr-map]
-                    {:ticker (u/trunc-addr pub-addr) :value (js/parseInt balance)}))
+                    {:pub-addr (u/trunc-addr pub-addr) :value (js/parseInt balance)}))
 
             dataset (mapv fmt local-keys-map)
 
-            test-tickers [{:ticker "BTC" :value 2704}
-                          {:ticker "ETH" :value 4499}
-                          {:ticker "LTC" :value 2159}
-                          {:ticker "BCH" :value 3853}
-                          {:ticker "ZCH" :value 7106}]
+            test-tickers [{:pub-addr "BTC" :value 2704}
+                          {:pub-addr "ETH" :value 4499}
+                          {:pub-addr "LTC" :value 2159}
+                          {:pub-addr "BCH" :value 3853}
+                          {:pub-addr "ZCH" :value 7106}]
 
             result (reduce conj test-tickers dataset)
 
