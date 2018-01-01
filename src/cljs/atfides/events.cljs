@@ -47,7 +47,8 @@
    (println ">>>> coefx:>> " coefx)
    (println "local-store-pub-keys: " local-store-pub-keys)
    (println "db: " db)
-   {:db (assoc db/default-db :local-pub-keys local-store-pub-keys)}))
+   {:db (assoc db/default-db :local-pub-keys local-store-pub-keys)
+    :dispatch [:request-ticker-prices]}))
 
 
 ;; Overall Strategy: add pub key with :balance nil
@@ -134,11 +135,11 @@
 (rf/reg-event-fx
   :request-ticker-prices
 
-  (fn [item1 item2]
-    (println "item1: " item1)
-    (println "item2: " item2)
+  (fn [_ _]
+    (println ":request-ticker-prices fired: >>")
 
     {:http-xhrio {:method         :get
+                  ;; assumes that btc, eth, ltc will be in the first 10
                   :uri "https://api.coinmarketcap.com/v1/ticker/?limit=10"
                   :response-format (ajax/json-response-format {:keywords? true})
                   :on-success [:ticker-prices-loaded]
@@ -147,13 +148,31 @@
 (rf/reg-event-db
   :ticker-prices-loaded
 
-  pub-keys-interceptors
+  [(rf/path :ticker-prices)
+   (rf/inject-cofx :local-store-pub-keys)
+   ->local-store
+   (when ^boolean js/goog.DEBUG rf/debug)
+   rf/trim-v]
 
-  ;; we only care about btc ltc eth prices
-  (fn [item1 item2]
-    (println "inside :ticker-prices-loaded")
-    (println "item1: " item1)
-    (println "item2: " item2)))
+  ;; we only care about btc ltc eth prices for now
+  ;; + we do not care about former prices (last refresh)
+  (fn [db [tickers-vec]]
+    (println ">>>> inside :ticker-prices-loaded")
+    (let [symbols (mapv :symbol tickers-vec)
+          btc-id (.indexOf symbols "BTC")
+          btc-price (u/id->price tickers-vec btc-id)
+          eth-id (.indexOf symbols "ETH")
+          eth-price (u/id->price tickers-vec eth-id)
+          ltc-id (.indexOf symbols "LTC")
+          ltc-price (u/id->price tickers-vec ltc-id)]
+      (println "Tickers-vec type: " tickers-vec)
+      (println "eth-price: " eth-price)
+      (println "db: " db)
+
+      ;; saves to db aka in-memory
+      (merge db {:btc btc-price
+                 :eth eth-price
+                 :ltc ltc-price}))))
 
 
 (rf/reg-event-db

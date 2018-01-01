@@ -49,6 +49,11 @@
   [content link]
   [:a {:href link :target :_blank} content])
 
+(defn id->price
+  "Gets the price of a coin's id from coinmarketcap payload"
+  [tickers-vec id]
+  (js/Number (:price_usd (nth tickers-vec id))))
+
 ;; -- Sources of regex
 ;; https://github.com/litvintech/crypto-balances/blob/master/src/address-checker.coffee#L19
 ;; https://www.regexpal.com/99712
