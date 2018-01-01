@@ -18,6 +18,16 @@
   [wei]
   (/ wei (* 1000 1000 1000 1000 1000 1000)))
 
+(defn wei->usd
+  "Converts weis to usd value"
+  [wei eth-price]
+  (* (wei->eth wei) eth-price))
+
+(defn satoshi->usd
+  "Converts satoshis to usd value"
+  [satos price]
+  (* (satoshi->btc satos) price))
+
 (defn gauge-signal [gauge]
   (cond
     (>= gauge 1) "green"
