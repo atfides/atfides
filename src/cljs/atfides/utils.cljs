@@ -20,13 +20,31 @@
 
 (defn wei->usd
   "Converts weis to usd value"
-  [wei eth-price]
-  (* (wei->eth wei) eth-price))
+  [wei price]
+  ;; making sure for numbers
+  (let [wei-n (js/Number wei)
+        price-n (js/Number price)]
+    (* (wei->eth wei-n) price-n)))
 
 (defn satoshi->usd
   "Converts satoshis to usd value"
   [satos price]
-  (* (satoshi->btc satos) price))
+  (let [satos-n (js/Number satos)
+        price-n (js/Number price)]
+    (* (satoshi->btc satos-n) price-n)))
+
+;; addr > {:id 1, :pub-addr x.., :balance nil, :ticker nil}
+(defn balance->usd
+  "Converts balance based on ticker
+  * addr: address hash map
+  * do not forget to deref (@) tickers-sub"
+  [addr tickers-sub]
+  (case (:ticker addr)
+    "BTC" (satoshi->usd (:balance addr) (:btc tickers-sub))
+    "ETH" (wei->usd (:balance addr) (:eth tickers-sub))
+    "LTC" (satoshi->usd (:balance addr) (:ltc tickers-sub))
+    ;; silently fail
+    nil))
 
 (defn gauge-signal [gauge]
   (cond
