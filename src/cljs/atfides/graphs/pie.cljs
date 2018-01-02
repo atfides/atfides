@@ -139,15 +139,6 @@
 
             dataset (mapv fmt local-keys-map)
 
-            test-tickers [{:pub-addr "BTC" :value 2704}
-                          {:pub-addr "ETH" :value 4499}
-                          {:pub-addr "LTC" :value 2159}
-                          {:pub-addr "BCH" :value 3853}
-                          {:pub-addr "ZCH" :value 7106}]
-
-            result (reduce conj test-tickers dataset)
-
-            _ (swap! ratom assoc :dataset result)]
+            _ (swap! ratom assoc :dataset dataset)]
 
            [viz ratom]))))
-
