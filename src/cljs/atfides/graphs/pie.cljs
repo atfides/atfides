@@ -133,8 +133,8 @@
             tickers-sub @tickers
 
             fmt (fn [addr-map]
-                  (let [{:keys [pub-addr balance]} addr-map]
-                    {:pub-addr pub-addr
+                  (let [{:keys [pub-addr]} addr-map]
+                    {:pub-addr (u/trunc-addr pub-addr)
                      :value (u/balance->usd addr-map tickers-sub)}))
 
             dataset (mapv fmt local-keys-map)
