@@ -70,11 +70,11 @@
           [ui/table-row {:key (:id addr) :selectable false}
            [ui/table-row-column (:pub-addr addr)]
            [ui/table-row-column (:ticker addr)]
-           [ui/table-row-column (u/balance->usd addr tickers-sub)]]))]
+           [ui/table-row-column (u/curr-fmt (u/balance->usd addr tickers-sub))]]))]
      [ui/table-footer
       [ui/table-row
        [ui/table-row-column {:style {:text-align "right"}}
-        [:h1 (str "Total: $" sum-balance)]]]]]))
+        [:h1 (str "Total: $" (u/curr-fmt sum-balance))]]]]]))
 
 
 
