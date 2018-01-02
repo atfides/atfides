@@ -61,9 +61,10 @@
   (fn [pub-keys [pub-key]]
     (println "[add-pub-k]>>>> pub-keys: " pub-keys)
     (println "[add-pub-k]>>>> pub-key: " pub-key)
-    (let [id (allocate-next-id pub-keys)]
+    (let [id (allocate-next-id pub-keys)
+          addr-patch (u/fix-eth-addr pub-key)]
       (assoc pub-keys id {:id id
-                          :pub-addr pub-key
+                          :pub-addr addr-patch
                           :balance nil
                           :ticker (u/get-ticker pub-key)}))))
 
@@ -109,18 +110,17 @@
   ;; interceptor takes care of saving data to LS
   pub-keys-interceptors
 
-  ;; resp -> :event -> [{:address 1H6ZZpRmMnrw8ytepV3BYwMjYYnEkWDqVP,
-  ;; :balance 307780, :final_balance 307780....
-  (fn [db [{:keys [address balance]}]]
+  (fn [db [{:keys [address balance] :as payload}]]
     (println "Address data loaded......>>>>>XXX...")
-    ;; balance is in satoshis (blockcypher) > convert
 
     ;; 1. Find the id of the address
     ;; 2. Dispatch an event to update address data:
     ;;    * from nil to actual amount
     (let [id-seq (u/id-by-addr db address)
           id (first id-seq)]
-      (println "Check computes: >>>>>>")
+      (println "eth address: >>>>>> " address)
+      (println "eth balance: >>>>>> " balance)
+      (println "Payload> track eth addr: " payload)
       (println "(first id-seq)" id)
       (println "db before assoc-in [id :balance]: >>>>" db)
       (assoc-in db [id :balance] balance))))

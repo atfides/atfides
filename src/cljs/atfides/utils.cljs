@@ -1,5 +1,6 @@
 (ns atfides.utils
-  (:require [print.foo :as pf :include-macros true]))
+  (:require [print.foo :as pf :include-macros true]
+            [clojure.string :as str]))
 
 (defn test-addresses []
   [:ul
@@ -10,6 +11,14 @@
    [:li "321NNHjv41Y4jg7S1Vx3esPJZ15izsf4eP"]
    [:li "LNeNJdV4a6M9a7NXyxHLeSQ8jEnf5Qx3AD"]
    [:li "3CRSkHdDQ71F1fjMiSt3ikmUtb3JPKtRr3"]])
+
+(defn fix-eth-addr
+  "Eth addrs must be 40 0xless and lowercased"
+  [addr]
+  (case (count addr)
+    42 (str/lower-case (subs addr 2))
+    40 (str/lower-case addr)
+    addr))
 
 ;; works for ->ltc
 (defn satoshi->btc
