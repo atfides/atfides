@@ -48,13 +48,14 @@
     :full-width true
     :on-save #(do
                 ;; we need to save the pub-key with nil values > then update later
-                (rf/dispatch [:add-pub-key %]))}])
-                ;; (rf/dispatch [:request-address-data %]))}])
+                (rf/dispatch [:add-pub-key %])
+                (rf/dispatch [:request-address-data %]))}])
 
 
 (defn pub-addr-list
   []
-  (let [local-keys-map (vals @(rf/subscribe [:local-pub-keys]))]
+  (let [local-keys-map (vals @(rf/subscribe [:local-pub-keys]))
+        tickers-sub @(rf/subscribe [:ticker-prices])]
     [ui/table {:selectable false}
      [ui/table-header {:adjust-for-checkbox false :display-select-all false}
       [ui/table-row
@@ -67,7 +68,7 @@
           [ui/table-row {:key (:id addr) :selectable false}
            [ui/table-row-column (:pub-addr addr)]
            [ui/table-row-column (:ticker addr)]
-           [ui/table-row-column (:balance addr)]]))]
+           [ui/table-row-column (u/balance->usd addr tickers-sub)]]))]
      [ui/table-footer
       [ui/table-row
        [ui/table-row-column {:style {:text-align "right"}}

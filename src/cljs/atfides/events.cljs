@@ -122,6 +122,7 @@
           id (first id-seq)]
       (println "Check computes: >>>>>>")
       (println "(first id-seq)" id)
+      (println "db before assoc-in [id :balance]: >>>>" db)
       (assoc-in db [id :balance] balance))))
 
 (rf/reg-event-db
@@ -167,7 +168,6 @@
           ltc-price (u/id->price tickers-vec ltc-id)]
       (println "Tickers-vec type: " tickers-vec)
       (println "eth-price: " eth-price)
-      (println "db: " db)
 
       ;; saves to db aka in-memory
       (merge db {:btc btc-price

@@ -135,11 +135,13 @@
 
 (defn GraphArc []
   (let [local-store (rf/subscribe [:local-pub-keys])
+        tickers (rf/subscribe [:ticker-prices])
         ratom (r/atom {:gauge 0})]
     (fn []
       (let [local-keys-map (vals @local-store)
+            tickers-sub @tickers
             ;; assumes that :balance is in $
-            sum-balance (reduce + (map (comp js/parseInt :balance) local-keys-map))
+            sum-balance (reduce + (map #(u/balance->usd % tickers-sub) local-keys-map))
 
             ;; only mapping 0 > 1 Million | 0.0 > 1.0
             angle (/ sum-balance (* 1 1000 1000))

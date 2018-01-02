@@ -126,13 +126,16 @@
 
 (defn GraphPie []
   (let [local-store (rf/subscribe [:local-pub-keys])
+        tickers (rf/subscribe [:ticker-prices])
         ratom (r/atom {})]
     (fn []
       (let [local-keys-map (vals @local-store)
+            tickers-sub @tickers
 
             fmt (fn [addr-map]
                   (let [{:keys [pub-addr balance]} addr-map]
-                    {:pub-addr (u/trunc-addr pub-addr) :value (js/parseInt balance)}))
+                    {:pub-addr pub-addr
+                     :value (u/balance->usd addr-map tickers-sub)}))
 
             dataset (mapv fmt local-keys-map)
 

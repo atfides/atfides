@@ -4,7 +4,9 @@
 (defn test-addresses []
   [:ul
    [:li "1KLMhEcYJBJdR1zcNZtTXByw3FnqSHBSm6"]
-   [:li "0x55b78aff680bd386222eac5ba2d8d095460b7e01"]
+   [:li "LXzhwSyYhTxZt4piVs7KvYPAWKDdXvMTNo"]
+   [:li "LUXh4CUeJM3nrYvgC7iKuMFw6nnnVSf1k3"] ;; about 2 mill
+   [:li "0x55b78aff680bd386222eac5ba2d8d095460b7e01"] ;; eth is revealing a nasty bug
    [:li "321NNHjv41Y4jg7S1Vx3esPJZ15izsf4eP"]
    [:li "LNeNJdV4a6M9a7NXyxHLeSQ8jEnf5Qx3AD"]
    [:li "3CRSkHdDQ71F1fjMiSt3ikmUtb3JPKtRr3"]])
@@ -43,7 +45,7 @@
     "BTC" (satoshi->usd (:balance addr) (:btc tickers-sub))
     "ETH" (wei->usd (:balance addr) (:eth tickers-sub))
     "LTC" (satoshi->usd (:balance addr) (:ltc tickers-sub))
-    ;; silently fail
+    ;; to avoid crash
     nil))
 
 (defn gauge-signal [gauge]
