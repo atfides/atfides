@@ -55,7 +55,9 @@
 (defn pub-addr-list
   []
   (let [local-keys-map (vals @(rf/subscribe [:local-pub-keys]))
-        tickers-sub @(rf/subscribe [:ticker-prices])]
+        tickers-sub @(rf/subscribe [:ticker-prices])
+        sum-balance (reduce + (map #(u/balance->usd % tickers-sub) local-keys-map))]
+
     [ui/table {:selectable false}
      [ui/table-header {:adjust-for-checkbox false :display-select-all false}
       [ui/table-row
@@ -72,8 +74,7 @@
      [ui/table-footer
       [ui/table-row
        [ui/table-row-column {:style {:text-align "right"}}
-        ;; will setup subs later
-        [:h1 "Total: $0"]]]]]))
+        [:h1 (str "Total: $" sum-balance)]]]]]))
 
 
 
@@ -87,7 +88,7 @@
     ;; Card 1: welcome ---------------------
     [ui/paper {:style paper-base}
      [:h1 "@Fides"]
-     [:p "Visualize all your crypto hodlings."]
+     [:p "Visualize your btc, eth, ltc crypto hodlings."]
      [pub-key-entry]]
 
 
