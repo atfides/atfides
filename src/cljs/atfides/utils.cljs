@@ -2,16 +2,6 @@
   (:require [print.foo :as pf :include-macros true]
             [clojure.string :as str]))
 
-(defn test-addresses []
-  [:ul
-   [:li "1KLMhEcYJBJdR1zcNZtTXByw3FnqSHBSm6"]
-   [:li "LXzhwSyYhTxZt4piVs7KvYPAWKDdXvMTNo"]
-   [:li "LUXh4CUeJM3nrYvgC7iKuMFw6nnnVSf1k3"] ;; about 2 mill
-   [:li "0x55b78aff680bd386222eac5ba2d8d095460b7e01"] ;; eth is revealing a nasty bug
-   [:li "321NNHjv41Y4jg7S1Vx3esPJZ15izsf4eP"]
-   [:li "LNeNJdV4a6M9a7NXyxHLeSQ8jEnf5Qx3AD"]
-   [:li "3CRSkHdDQ71F1fjMiSt3ikmUtb3JPKtRr3"]])
-
 (defn curr-fmt
   "Currency formatting"
   [num]
@@ -80,13 +70,6 @@
         :when (= (:pub-addr val-pairs) addr)
         :let [id (:id val-pairs)]]
     id))
-
-;; With [Allocations by crypto tickers] feature
-;; this helper will be obsolete
-(defn trunc-addr
-  "Truncate pub-addr to display nicely on pie chart"
-  [addr]
-  (str (subs addr 0 10) "..."))
 
 (defn new-target-link
   "Opens new link on a separate tab"

@@ -125,13 +125,7 @@
     ;; Card 7: contact --------------------------
     [ui/paper {:style paper-base}
      [:p "Any ideas, suggestions for @Fides, ping me on Twitter: "
-      [:bold (u/new-target-link "@mohamedhayibor" "https://twitter.com/mohamedhayibor")]]]
-
-    ;; Testing only ---------------------
-    [ui/paper {:style (dissoc paper-base :text-align)}
-     [:h3 "Test addresses"]
-     [utils/test-addresses]]]])
-
+      [:bold (u/new-target-link "@mohamedhayibor" "https://twitter.com/mohamedhayibor")]]]]])
 
 (defn main-panel []
   [home-page])
