@@ -123,43 +123,6 @@
                        :did-mount text-label
                        :prepare-dataset prepare-dataset}]}])
 
-(defn viz2 [ratom]
-  [rid3/viz
-   {:id              "piechart"
-    :ratom           ratom
-    :svg             {:did-mount svg}
-    :main-container  {:did-mount main-container}
-    :pieces
-                     [{:kind      :elem-with-data
-                       :class     "arc"
-                       :tag       "path"
-                       :did-mount arc
-                       :prepare-dataset prepare-dataset}
-                      {:kind      :elem-with-data
-                       :class     "text-label"
-                       :tag       "text"
-                       :did-mount text-label
-                       :prepare-dataset prepare-dataset}]}])
-
-(defn Alloc-by-addrs []
-  (let [local-store (rf/subscribe [:local-pub-keys])
-        tickers (rf/subscribe [:ticker-prices])
-        ratom (r/atom {})]
-    (fn []
-      (let [local-keys-map (vals @local-store)
-            tickers-sub @tickers
-
-            fmt (fn [addr-map]
-                  (let [{:keys [pub-addr]} addr-map]
-                    {:pub-addr (u/trunc-addr pub-addr)
-                     :value (u/balance->usd addr-map tickers-sub)}))
-
-            dataset (mapv fmt local-keys-map)
-
-            _ (swap! ratom assoc :dataset dataset)]
-
-           [viz ratom]))))
-
 (defn Alloc-by-tickers []
   (let [local-store (rf/subscribe [:local-pub-keys])
         tickers (rf/subscribe [:ticker-prices])
@@ -202,4 +165,4 @@
 
             _ (swap! ratom assoc :dataset result)]
 
-           [viz2 ratom]))))
+           [viz ratom]))))

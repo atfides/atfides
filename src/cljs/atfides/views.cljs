@@ -85,22 +85,16 @@
                  {:palette {:text-color (color :green600)}})}
 
    [:div
-    ;; Card 0: welcome ---------------------
+    ;; Card 1: welcome -------------------------
     [ui/paper {:style paper-base}
      [:h1 "@Fides"]
      [:p "Visualize your btc, eth, ltc crypto hodlings."]
      [pub-key-entry]]
 
-    ;; Card 1: allocations ---------------------
+    ;; Card 2: allocations by tickers ----------
     [ui/paper {:style paper-base}
-     [:h2 "Hodling by Tickers"]
+     [:h2 "Hodling Allocations"]
      [gpie/Alloc-by-tickers]]
-
-
-    ;; Card 2: allocations ---------------------
-    [ui/paper {:style paper-base}
-     [:h2 "Hodling Allocations / Diversification"]]
-     ;; [gpie/Alloc-by-addrs]]
 
     ;; Card 3: a milli yet ---------------------
     [ui/paper {:style paper-base}
