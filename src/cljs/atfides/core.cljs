@@ -9,6 +9,8 @@
             [atfides.config :as config]
             [cljsjs.material-ui]))
 
+(enable-console-print!)
+
 (defn ^:export init []
   (rf/dispatch-sync [:initialize-db])
   (reagent/render [views/main-panel]
