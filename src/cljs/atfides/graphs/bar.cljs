@@ -1,7 +1,8 @@
 (ns atfides.graphs.bar
   (:require [rid3.core :as rid3]
             [reagent.core :as r]
-            [re-frame.core :as rf]))
+            [re-frame.core :as rf]
+            [atfides.utils :as u]))
 
 ;; Example from:
 ;; https://bl.ocks.org/mbostock/3885304
@@ -20,9 +21,9 @@
 (defn get-width
   [ratom]
   (let [page-width (get @ratom :page-width)]
-    (max (min 900
+    (max (min 800
               (- page-width 100))
-         260)))
+         500)))
 
 
 (defn get-height [ratom]
@@ -59,7 +60,7 @@
 (defn create-x-scale [ratom]
   (let [dataset (get @ratom :dataset)
         width   (get-width ratom)
-        domain  (map :month dataset)]
+        domain  (map :pub-addr dataset)]
     (-> js/d3
         .scaleBand
         (.rangeRound #js [0 width])
@@ -125,7 +126,7 @@
                             (-> (js/d3.select this)
                                 (.style "fill" "steelblue")))))
         (.attr "x" (fn [d]
-                     (x-scale (aget d "month"))))
+                     (x-scale (aget d "pub-addr"))))
         (.attr "y" (fn [d]
                      (y-scale (aget d "value"))))
         (.attr "width" (.bandwidth x-scale))
@@ -135,26 +136,10 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; dataset
-(def dataset
-  [{:month "Jan" :value 2704}
-   {:month "Feb" :value 4499}
-   {:month "Mar" :value 2159}
-   {:month "Apr" :value 3853}
-   {:month "May" :value 14106}
-   {:month "Jun" :value 8819}
-   {:month "Jul" :value 612}
-   {:month "Aug" :value 2159}
-   {:month "Oct" :value 3853}
-   {:month "Nov" :value 14106}
-   {:month "Dec" :value 8819}])
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; viz
 (defn viz [ratom]
   [rid3/viz
-   {:id             "barchart2"
+   {:id             "barchart"
     :ratom          ratom
     :svg            {:did-mount svg}
     :main-container {:did-mount main-container}
@@ -177,11 +162,24 @@
                       :tag       "text"
                       :did-mount y-label}]}])
 
-
 (defn GraphBar []
-  (let [local-store (rf/subscribe [:local-pub-keys])]
+  (let [local-store (rf/subscribe [:local-pub-keys])
+        tickers (rf/subscribe [:ticker-prices])
+        ratom (r/atom {})]
     (fn []
-      (let [local-keys-map (vals @local-store)]
-        ;; only use subs fed data upon feature request
-        ;; aka later :->
-        (viz (r/atom {:dataset dataset}))))))
+      (let [local-keys-map (vals @local-store)
+            tickers-sub @tickers
+
+            fmt (fn [addr-map]
+                  (let [{:keys [id]} addr-map]
+                    ;; on top we got the accounts table, so id is fine
+                    {:pub-addr id
+                     :value    (u/balance->usd addr-map tickers-sub)}))
+
+            dataset (mapv fmt local-keys-map)
+
+            _ (swap! ratom assoc :dataset dataset)]
+
+        (if (seq (:dataset @ratom))
+          [viz ratom]
+          [:p "No data yet, enter your public addresses."])))))

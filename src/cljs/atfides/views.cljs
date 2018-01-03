@@ -63,6 +63,7 @@
     [ui/table {:selectable false}
      [ui/table-header {:adjust-for-checkbox false :display-select-all false}
       [ui/table-row
+       [ui/table-header-column "No."]
        [ui/table-header-column "Address"]
        [ui/table-header-column "Ticker"]
        [ui/table-header-column "Amount"]]]
@@ -70,6 +71,7 @@
       (doall
         (for [addr local-keys-map]
           [ui/table-row {:key (:id addr) :selectable false}
+           [ui/table-row-column (:id addr)]
            [ui/table-row-column (:pub-addr addr)]
            [ui/table-row-column (:ticker addr)]
            [ui/table-row-column (u/curr-fmt (u/balance->usd addr tickers-sub))]]))]
@@ -102,22 +104,25 @@
      [:h2 "Crypto Millionaire yet?"]
      [garc/GraphArc]]
 
-    ;; Card 4: accounts ---------------------
+    ;; Card 4: accounts ------------------------
     [ui/paper {:style (dissoc paper-base :text-align)}
      [pub-addr-list]]
 
-    ;; Card 5: sponsor ---------------------
+    ;; Card 5: barchart ------------------------
+    [ui/paper {:style paper-base}
+     [:h2 "Allocations by addresses"]
+     [gbar/GraphBar]]
 
+    ;; Card 5: sponsor -------------------------
     [ui/paper {:style (dissoc paper-base :text-align)}
      [:h3 "Sponsor these upcoming features:"]
      [:p "~ Addition of a requested crypto-currency. $500"]
      [:p "~ Visualize by storage i.e: hardware, software aka hot, cold. $10,000"]
      [:p "~ A web service (api) to get the balance of any major crypto-currency's address. All in one endpoint. $50,000"]
-     [:p "~ Hodlings overtime. Meta-crunching of investing vs spending on all provided addresses. $200,000"]
+     [:p "~ Hodlings overtime. Meta-crunching of investing vs spending on all provided addresses. $200,000"]]
      ;; [:br] ;; [:p "Historical Hodlings: **dummy example**"]
-     [gbar/GraphBar]]
 
-    ;; Card 6: contact ---------------------
+    ;; Card 7: contact --------------------------
     [ui/paper {:style paper-base}
      [:p "Any ideas, suggestions for @Fides, ping me on Twitter: "
       [:bold (u/new-target-link "@mohamedhayibor" "https://twitter.com/mohamedhayibor")]]]
@@ -129,4 +134,4 @@
 
 
 (defn main-panel []
-  [:div [home-page]])
+  [home-page])
