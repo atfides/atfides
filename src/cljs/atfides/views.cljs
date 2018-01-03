@@ -85,17 +85,22 @@
                  {:palette {:text-color (color :green600)}})}
 
    [:div
-    ;; Card 1: welcome ---------------------
+    ;; Card 0: welcome ---------------------
     [ui/paper {:style paper-base}
      [:h1 "@Fides"]
      [:p "Visualize your btc, eth, ltc crypto hodlings."]
      [pub-key-entry]]
 
+    ;; Card 1: allocations ---------------------
+    [ui/paper {:style paper-base}
+     [:h2 "Hodling by Tickers"]
+     [gpie/Alloc-by-tickers]]
+
 
     ;; Card 2: allocations ---------------------
     [ui/paper {:style paper-base}
-     [:h2 "Hodling Allocations / Diversification"]
-     [gpie/GraphPie]]
+     [:h2 "Hodling Allocations / Diversification"]]
+     ;; [gpie/Alloc-by-addrs]]
 
     ;; Card 3: a milli yet ---------------------
     [ui/paper {:style paper-base}
@@ -126,9 +131,9 @@
     ;; Testing only ---------------------
     [ui/paper {:style (dissoc paper-base :text-align)}
      [:h3 "Test addresses"]
-     [utils/test-addresses]]
+     [utils/test-addresses]]]])
 
-    [:br]]])
+    ;; [:br]]])
 
 
 (defn main-panel []
