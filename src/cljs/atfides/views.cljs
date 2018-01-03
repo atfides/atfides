@@ -7,7 +7,6 @@
             [atfides.utils :as utils]
             [cljs-react-material-ui.core :refer [get-mui-theme color]]
             [cljs-react-material-ui.reagent :as ui]
-            [cljs-react-material-ui.icons :as ic]
             [rid3.core :as rid3]
             [atfides.graphs.pie :as gpie]
             [atfides.graphs.bar :as gbar]

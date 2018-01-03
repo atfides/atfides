@@ -1,6 +1,5 @@
 (ns atfides.utils
-  (:require [print.foo :as pf :include-macros true]
-            [clojure.string :as str]))
+  (:require [clojure.string :as str]))
 
 (defn curr-fmt
   "Currency formatting"

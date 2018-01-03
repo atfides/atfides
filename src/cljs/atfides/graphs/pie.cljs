@@ -2,7 +2,6 @@
   (:require [rid3.core :as rid3]
             [reagent.core :as r]
             [atfides.subs :as subs]
-            [print.foo :as pf :include-macros true]
             [re-frame.core :as rf]
             [atfides.utils :as u]))
 
