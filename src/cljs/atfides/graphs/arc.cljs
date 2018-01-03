@@ -9,18 +9,17 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; vars
-
 (def tau
   (* 2 js/Math.PI))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; util
-
 (defn get-width [ratom]
   (let [page-width (get @ratom :page-width)]
     (max (min 500
               (- page-width 100))
          400)))
+
 
 (defn get-height [ratom]
   (let [width (get-width ratom)]
@@ -36,6 +35,7 @@
         (.outerRadius radius)
         (.startAngle 0))))
 
+
 (defn arc-tween [new-angle ratom]
   (fn [d]
     (let [end-angle   (aget d "endAngle")
@@ -45,9 +45,9 @@
           (set! (.-endAngle d) (interpolate t))
           (arc d))))))
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; svg
-
 (defn svg [node ratom]
   (let [width  (get-width ratom)
         height (get-height ratom)]
@@ -56,10 +56,8 @@
         (.attr "height" height))))
 
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; main container
-
 (defn main-container [node ratom]
   (let [width  (get-width ratom)
         height (get-height ratom)]
@@ -69,10 +67,8 @@
                                 (/ height 2) ")")))))
 
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; background
-
 (defn background [node ratom]
   (let [arc (create-arc ratom)]
     (-> node
@@ -81,10 +77,8 @@
         (.attr "d" arc))))
 
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; foreground
-
 (defn foreground-common [node ratom]
   (let [arc (create-arc ratom)
         ;; gauge here is sum (total of crypto assets)
@@ -109,12 +103,13 @@
 (defn foreground-did-mount [node ratom]
   (foreground-common node ratom))
 
+
 (defn foreground-did-update [node ratom]
   (foreground-common node ratom))
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; viz
-
 (defn viz [ratom]
   [rid3/viz
    {:id             "arc-tween"

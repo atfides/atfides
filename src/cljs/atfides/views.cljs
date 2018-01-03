@@ -15,6 +15,7 @@
             [reagent.core :as r]
             [atfides.utils :as u]))
 
+
 (def paper-base {:padding 20
                  :margin 40
                  :text-align "center"})
@@ -39,6 +40,7 @@
                                              13 (save)
                                              27 (stop)
                                              nil)})])))
+
 
 (defn pub-key-entry
   []
@@ -77,7 +79,6 @@
         [:h1 (str "Total: $" (u/curr-fmt sum-balance))]]]]]))
 
 
-
 (defn home-page []
   [ui/mui-theme-provider
    {:mui-theme (get-mui-theme
@@ -109,7 +110,7 @@
 
     [ui/paper {:style (dissoc paper-base :text-align)}
      [:h3 "Sponsor these upcoming features:"]
-     [:p "~ Allocation by tickers i.e: btc, eth, ltc in aggregate. $500"]
+     [:p "~ Addition of a requested crypto-currency. $500"]
      [:p "~ Visualize by storage i.e: hardware, software aka hot, cold. $10,000"]
      [:p "~ A web service (api) to get the balance of any major crypto-currency's address. All in one endpoint. $50,000"]
      [:p "~ Hodlings overtime. Meta-crunching of investing vs spending on all provided addresses. $200,000"]
@@ -118,7 +119,6 @@
 
     ;; Card 6: contact ---------------------
     [ui/paper {:style paper-base}
-     ;; [:p "How to: just enter a public crypto-currency address and hit enter :)"]
      [:p "Any ideas, suggestions for @Fides, ping me on Twitter: "
       [:bold (u/new-target-link "@mohamedhayibor" "https://twitter.com/mohamedhayibor")]]]
 
@@ -126,8 +126,6 @@
     [ui/paper {:style (dissoc paper-base :text-align)}
      [:h3 "Test addresses"]
      [utils/test-addresses]]]])
-
-    ;; [:br]]])
 
 
 (defn main-panel []

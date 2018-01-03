@@ -8,7 +8,6 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; vars
-
 (def margin
   {:top    20
    :right  20
@@ -16,10 +15,8 @@
    :left   40})
 
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; util fns
-
 (defn get-width
   [ratom]
   (let [page-width (get @ratom :page-width)]
@@ -27,15 +24,14 @@
               (- page-width 100))
          260)))
 
+
 (defn get-height [ratom]
   (let [width (get-width ratom)]
     (/ width 2)))
 
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; svg
-
 (defn svg [node ratom]
   (let [width (get-width ratom)
         height (get-height ratom)]
@@ -48,10 +44,8 @@
                            (get margin :bottom))))))
 
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; main-container
-
 (defn main-container [node]
   (-> node
       (.attr "transform" (str "translate("
@@ -60,10 +54,8 @@
                               (get margin :top) ")"))))
 
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; scales
-
 (defn create-x-scale [ratom]
   (let [dataset (get @ratom :dataset)
         width   (get-width ratom)
@@ -73,6 +65,7 @@
         (.rangeRound #js [0 width])
         (.padding 0.1)
         (.domain (clj->js domain)))))
+
 
 ;; graphs from 0 to max-y
 (defn create-y-scale [ratom]
@@ -84,9 +77,9 @@
         (.rangeRound #js [height 0])
         (.domain #js [0 max-y]))))
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; axis
-
 (defn x-axis [node ratom]
   (let [height  (get-height ratom)
         x-scale (create-x-scale ratom)]
@@ -97,10 +90,12 @@
         (.select "path")
         (.style "stroke" "none"))))
 
+
 (defn y-axis [node ratom]
   (let [y-scale (create-y-scale ratom)]
     (-> node
         (.call (-> (.axisLeft js/d3 y-scale))))))
+
 
 (defn y-label [node ratom]
   (-> node
@@ -113,10 +108,8 @@
       (.text "$ value")))
 
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; bar
-
 (defn bar [node ratom]
   (let [height  (get-height ratom)
         x-scale (create-x-scale ratom)
@@ -141,10 +134,8 @@
                              (y-scale (aget d "value"))))))))
 
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; dataset
-
 (def dataset
   [{:month "Jan" :value 2704}
    {:month "Feb" :value 4499}
@@ -161,7 +152,6 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; viz
-
 (defn viz [ratom]
   [rid3/viz
    {:id             "barchart2"
