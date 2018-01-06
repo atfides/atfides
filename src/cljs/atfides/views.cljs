@@ -90,7 +90,7 @@
    [:div
     ;; Card 1: welcome -------------------------
     [ui/paper {:style paper-base}
-     [:h1 "@Fides"]
+     [:h1 "CryptoMilli"]
      [:p "Visualize your btc, eth, ltc crypto hodlings."]
      [pub-key-entry]]
 
@@ -116,15 +116,17 @@
     ;; Card 5: sponsor -------------------------
     [ui/paper {:style (dissoc paper-base :text-align)}
      [:h3 "Sponsor these upcoming features:"]
-     [:p "~ Addition of a requested crypto-currency. $500"]
-     [:p "~ Visualize by storage i.e: hardware, software aka hot, cold. $10,000"]
-     [:p "~ A web service (api) to get the balance of any major crypto-currency's address. All in one endpoint. $50,000"]
-     [:p "~ Hodlings overtime. Meta-crunching of investing vs spending on all provided addresses. $200,000"]]
+     [:p "~ Playing Lil Wayne's song when you're a milli. $" (u/curr-fmt 2000)]
+     [:p "~ Addition of a requested crypto-currency. $" (u/curr-fmt 5000)]
+     [:p "~ Visualize by storage i.e: hardware, software aka hot, cold. $" (u/curr-fmt 30000)]
+     [:p "~ Inclusion of ERC20 Tokens. $" (u/curr-fmt 60000)]
+     [:p "~ A web service (api) to get the balance of any major crypto-currency's address. All in one endpoint. $" (u/curr-fmt 150000)]
+     [:p "~ Hodlings overtime. Meta-crunching of investing vs spending on all provided addresses. $" (u/curr-fmt 250000)]]
      ;; [:br] ;; [:p "Historical Hodlings: **dummy example**"]
 
     ;; Card 7: contact --------------------------
     [ui/paper {:style paper-base}
-     [:p "Any ideas, suggestions for @Fides, ping me on Twitter: "
+     [:p "Any ideas, sponsorships, suggestions for CryptoMilli, ping me on Twitter: "
       [:bold (u/new-target-link "@mohamedhayibor" "https://twitter.com/mohamedhayibor")]]]]])
 
 (defn main-panel []
