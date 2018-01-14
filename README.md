@@ -1,6 +1,6 @@
 # atfides "Heavy experimentations"
 
-A [re-frame](https://github.com/Day8/re-frame) application.
+The cleaner version of this repo: [cryptomilli](https://github.com/mohamedhayibor/cryptomilli) live at [https://www.cryptomilli.com](https://www.cryptomilli.com)
 
 ### Run application:
 
